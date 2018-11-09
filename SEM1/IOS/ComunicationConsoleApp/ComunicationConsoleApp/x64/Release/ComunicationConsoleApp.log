@@ -1,0 +1,7 @@
+﻿  AppScroll-e.cpp
+AppScroll-e.cpp(134): warning C4244: 'argument': conversion from 'DWORD' to 'BYTE', possible loss of data
+AppScroll-e.cpp(148): warning C4002: too many actual parameters for macro 'LOWORD'
+  Menu-e.cpp
+TRACKER : error TRK0005: Failed to locate: "rc.exe". The system cannot find the file specified.
+  
+  

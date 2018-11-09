@@ -1,11 +1,13 @@
-// OpenCVApplication.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
 #include "common.h"
 #include<fstream>
 #include<cstring>
+#include<stdio.h>
+#include<iostream>
+#include <vector>
+#include <random>
 using namespace std;
+using namespace cv;
 
 
 void testOpenImage()
@@ -474,7 +476,7 @@ void LeastMeanSquare()
 		}
 		t1 = (n*s1 - s2 * s3) / (n*s4 - s2 * s2);
 		t0 = (s3 - t1 * s2) / n;
-		cout << t0 << ' ' << t1<<'\n';
+		cout << t0 << ' ' << t1 << '\n';
 
 		float val1 = t0;
 		float val2 = t0 + t1 * img.cols;
@@ -495,6 +497,413 @@ void LeastMeanSquare()
 	}
 }
 
+void RANSACLineFitting()
+{
+	vector<Point> pointsInImage;
+	float t = 10, p = 0.99, q = 0.8, s = 2, N;
+	Mat src;
+
+	char fname[MAX_PATH];
+	openFileDlg(fname);
+	src = imread(fname, CV_LOAD_IMAGE_GRAYSCALE);
+	for (int i = 0; i < src.rows; i++)
+		for (int j = 0; j < src.cols; j++)
+			if (src.at<uchar>(i, j) == 0)
+				pointsInImage.push_back(Point(j, i));
+
+	N = log(1 - p) / log(1 - pow(q, s));
+	for (int tr = 0; tr <= 5; tr++)
+	{
+		int bestScore = 0;
+		Point bestp1, bestp2;
+		for (int i = 0; i < ceil(N); i++)
+		{
+			int first = rand() % pointsInImage.size();
+			int second = rand() % pointsInImage.size();
+			while (first == second)
+				second = rand() % pointsInImage.size();
+			Point point1 = pointsInImage.at(first);
+			Point point2 = pointsInImage.at(second);
+			float a = point1.y - point2.y;
+			float b = point2.x - point1.x;
+			float c = point1.x*point2.y - point2.x * point1.y;
+
+			int score = 0;
+			for (int j = 0; j < pointsInImage.size(); j++)
+			{
+				Point current = pointsInImage.at(j);
+				float dist = fabs(a*current.x + b * current.y + c) / sqrt(a*a + b * b);
+				if (dist < t)
+					score++;
+			}
+			if (score > bestScore)
+			{
+				bestScore = score;
+				bestp1 = point1;
+				bestp2 = point2;
+			}
+
+			if (bestScore > q * pointsInImage.size())
+				break;
+		}
+
+		line(src, bestp1, bestp2, 1, 1, 8, 0);
+		imshow("Points and line", src);
+		waitKey(0);
+	}
+}
+
+void Hough()
+{
+	struct peak {
+		int theta, ro, hval;
+		bool operator < (const peak& o) const {
+			return hval > o.hval;
+		}
+	};
+
+	vector<Point> pointsInImage;
+	vector<peak> Peaks[8];
+	Mat src, H;
+
+	char fname[MAX_PATH];
+	openFileDlg(fname);
+	src = imread(fname, CV_LOAD_IMAGE_GRAYSCALE);
+	for (int i = 0; i < src.rows; i++)
+		for (int j = 0; j < src.cols; j++)
+			if (src.at<uchar>(i, j) == 255)
+				pointsInImage.push_back(Point(j, i));
+
+	const float roMin = 0, roMax = sqrt(src.rows*src.rows + src.cols*src.cols), tethaMin = 0, tethaMax = 360;
+
+	const int deltaRo = 1;
+	const int deltaTetha = 1;
+
+	H = Mat(360, (int)roMax + 1, CV_32SC1);
+
+	for (int i = 0; i < H.rows; i++)
+		for (int j = 0; j < H.cols; j++)
+			H.at<int>(i, j) = 0;
+
+	for (int i = 0; i < pointsInImage.size(); i++)
+	{
+		Point pct = pointsInImage.at(i);
+		int tetha;
+		for (tetha = 0; tetha < 360; tetha++)
+		{
+			int ro = pct.x*cos(tetha * CV_PI / 180) + pct.y*sin(tetha * CV_PI / 180);
+			if (ro < roMax && ro > 0)
+				H.at<int>(tetha, ro)++;
+		}
+	}
+
+	int maxHough = 0;
+
+	for (int i = 0; i < H.rows; i++)
+		for (int j = 0; j < H.cols; j++)
+			if (H.at<int>(i, j) > maxHough)
+				maxHough = H.at<int>(i, j);
+
+	Mat houghImg;
+	H.convertTo(houghImg, CV_8UC1, 255.f / maxHough);
+	imshow("Hough img", houghImg);
+	cout << "decide size of search area: 3,5,7: ";
+	int sizeOfArea;
+	cin >> sizeOfArea;
+	for (int i = 0; i < H.rows; i++)
+		for (int j = 0; j < H.cols; j++)
+		{
+			Point pMax(-1, -1);
+			int vMax = 0;
+			for (int k = i - sizeOfArea / 2; k <= i + sizeOfArea / 2; k++)
+				for (int l = max(j - sizeOfArea / 2, 0); l <= min(j + sizeOfArea / 2, H.cols - 1); l++)
+				{
+					if (H.at<int>((k + 360) % 360, l) > vMax)
+					{
+						pMax = Point((k + 360) % 360, l);
+						vMax = H.at<int>((k + 360) % 360, l);
+					}
+				}
+			if (pMax.x == i && pMax.y == j)
+			{
+				peak pk;
+				pk.hval = vMax;
+				pk.ro = j;
+				pk.theta = i;
+				Peaks[sizeOfArea].push_back(pk);
+			}
+		}
+	Mat matr(src.rows, src.cols, CV_8UC3);
+	matr = imread(fname, CV_LOAD_IMAGE_COLOR);
+	sort(Peaks[sizeOfArea].begin(), Peaks[sizeOfArea].end());
+	for (int i = 0; i < 10; i++)
+	{
+		Point pt1, pt2;
+		cout << "ro:" << Peaks[sizeOfArea][i].ro << " theta: " << Peaks[sizeOfArea][i].theta << '\n';
+		double a = cos(CV_PI / 180 * (Peaks[sizeOfArea][i].theta)), b = sin(CV_PI / 180 * (Peaks[sizeOfArea][i].theta));
+		double x0 = a * Peaks[sizeOfArea][i].ro, y0 = b * Peaks[sizeOfArea][i].ro;
+		pt1.x = cvRound(x0 + 1000 * (-b));
+		pt1.y = cvRound(y0 + 1000 * (a));
+		pt2.x = cvRound(x0 - 1000 * (-b));
+		pt2.y = cvRound(y0 - 1000 * (a));
+		line(matr, pt1, pt2, Scalar(255, 0, 0));
+	}
+
+	imshow("", matr);
+	waitKey(0);
+}
+
+void DistanceTransformAndPatternMatching()
+{
+	Mat src1, src2, H, resDist;
+	int distx = 0, disty = 0;
+	char fname[MAX_PATH];
+	openFileDlg(fname);
+	src1 = imread(fname, CV_LOAD_IMAGE_GRAYSCALE);
+	imshow("source 1 initial", src1);
+	openFileDlg(fname);
+	src2 = imread(fname, CV_LOAD_IMAGE_GRAYSCALE);
+	imshow("source 2", src2);
+	//distance transform
+	for (int i = 1; i < src1.rows - 1; i++)
+		for (int j = 1; j < src1.cols - 1; j++)
+		{
+			// p0 p1 p2
+			// p3 px
+			int p0 = src1.at<uchar>(i - 1, j - 1) + 3;
+			int p1 = src1.at<uchar>(i - 1, j) + 2;
+			int p2 = src1.at<uchar>(i - 1, j + 1) + 3;
+			int p3 = src1.at<uchar>(i, j - 1) + 2;
+			src1.at<uchar>(i, j) = min(min(min(p0, p1), min(p2, p3)), src1.at<uchar>(i, j));
+		}
+	imshow("source 1 distance transform top down", src1);
+	for (int i = src1.rows - 2; i > 1; i--)
+		for (int j = src1.cols - 2; j > 1; j--)
+		{
+			//    px p0
+			// p3 p2 p1
+			int p0 = src1.at<uchar>(i, j + 1) + 2;
+			int p1 = src1.at<uchar>(i + 1, j + 1) + 3;
+			int p2 = src1.at<uchar>(i - 1, j) + 2;
+			int p3 = src1.at<uchar>(i + 1, j - 1) + 3;
+			src1.at<uchar>(i, j) = min(min(min(p0, p1), min(p2, p3)), src1.at<uchar>(i, j));
+		}
+	imshow("source 1 distance transform top down + bottom up", src1);
+	int sum = 0;
+	int count = 0;
+	for (int i = 0; i < src2.rows; i++)
+		for (int j = 0; j < src2.cols; j++)
+			if (src2.at<uchar>(i, j) == 0)
+			{
+				sum += src1.at<uchar>(i, j);
+				count++;
+			}
+	cout << (int)((float)(sum / count));
+	waitKey(0);
+}
+
+void StatisticalDataAnalysis()
+{
+	//read data
+	int p = 400, N = 361;
+	Mat Features(p + 1, N, CV_8UC1, float(0));
+	Mat COV(N, N, CV_32FC1, float(0));
+	Mat COR(N, N, CV_32FC1, float(0));
+	Mat CORC(256, 256, CV_8UC1);
+	float averages[370];
+	for (int i = 0; i < N; i++)
+		averages[i] = 0;
+	char folder[256] = "Images/images_faces";
+	char fname[256];
+	for (int i = 1; i <= p; i++)
+	{
+		sprintf(fname, "%s/face%05d.bmp", folder, i);
+		Mat img = imread(fname, 0);
+		for (int l = 0; l < 19; l++)
+			for (int c = 0; c < 19; c++)
+			{
+				Features.at<uchar>(i - 1, l * 19 + c) = img.at<uchar>(l, c);
+				averages[l * 19 + c] += (float)img.at<uchar>(l, c);
+			}
+	}
+	//calc mediile
+	for (int i = 0; i < N; i++)
+		averages[i] /= (float)p;
+
+	//calc matrice de covarianta
+	ofstream g("COV.csv");
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j <= i; j++)
+		{
+			g << 0;
+			int sum = 0;
+			for (int k = 0; k < p; k++)
+				sum += ((float)Features.at<uchar>(k, i) - averages[i])*((float)Features.at<uchar>(k, j) - averages[j]);
+			COV.at<float>(j, i) = COV.at<float>(i, j) = sum / (float)p;
+			g << ',' << COV.at<float>(i, j);
+		}
+		g << '\n';
+	}
+	g.close();
+	//calc matrice de corelatie
+	ofstream gg("COR.csv");
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j <= i; j++)
+		{
+			COR.at<float>(j, i) = COR.at<float>(i, j) = COV.at<float>(j, i) / (sqrt(COV.at<float>(i, i))*sqrt(COV.at<float>(j, j)));
+			gg << ',' << COR.at<float>(i, j);
+		}
+		gg << '\n';
+	}
+	gg.close();
+	//corelation chart
+	int corcx1 = 5, corcy1 = 4;
+	int corcx2 = 5, corcy2 = 14;
+	for (int i = 0; i < p; i++)
+	{
+		int val1 = Features.at<uchar>(i, corcx1 * 19 + corcy1);
+		int val2 = Features.at<uchar>(i, corcx2 * 19 + corcy2);
+		CORC.at<uchar>(val1, val2) = 0;
+	}
+	imshow("corelation graph", CORC);
+	cout << COR.at<float>(corcx1 * 19 + corcy1, corcx2 * 19 + corcy2);
+	waitKey(0);
+}
+
+double dist(std::vector<int> a, std::vector<int> b)
+{
+	double sum = 0;
+	for (int i = 0; i < a.size(); i++)
+		sum += (a[i] - b[i])*(a[i] - b[i]);
+	return sum; //could be sqrt but it is faster like this
+}
+
+typedef struct PointCluster {
+	int x, y, cluster;
+};
+
+double distPoints(PointCluster a, PointCluster b)
+{
+	return (a.x - b.x)*(a.x - b.x) + (a.y - b.y)*(a.y - b.y);//could be sqrt but it is faster like this
+}
+
+void KmeansClustering()
+ {
+	int k;
+	cout << "give k:";
+	cin >> k;
+	char fname1[MAX_PATH];
+	openFileDlg(fname1);
+	Mat src = imread(fname1, CV_LOAD_IMAGE_GRAYSCALE);
+
+	vector<PointCluster> x;
+	for (int i = 0; i < src.rows; i++) 
+		for (int j = 0; j < src.cols; j++) 
+			if (src.at<uchar>(i, j) == 0)
+				x.push_back(PointCluster{ i, j, -1 });
+
+	int n = x.size();
+
+	//initialize clusters
+	default_random_engine gen;
+	gen.seed(time(NULL));
+	uniform_int_distribution<int> distribution(0, n - 1);
+	vector<PointCluster> centers;
+	for (int i = 0; i < k; i++) 
+	{
+		int randint = distribution(gen);
+		x[randint].cluster = i;
+		centers.push_back(x[randint]);
+	}
+
+	bool stop = false;
+	while (stop == false) 
+	{
+		//assignment
+		for (int i = 0; i < n; i++) 
+		{
+			int minDist = INT_MAX;
+			//find closest cluster center
+			for (int j = 0; j < k; j++) 
+			{
+				int dist = distPoints(x[i], centers[j]);
+				if (dist < minDist) 
+				{
+					minDist = dist;
+					x[i].cluster = centers[j].cluster;
+				}
+			}
+		}
+
+		//update centers
+		for (int i = 0; i < k; i++) 
+		{
+			int x1Sum = 0;
+			int x2Sum = 0;
+			int noPointsInCluster = 0;
+			for (int j = 0; j < n; j++) 
+				if (x[j].cluster == i) 
+				{
+					x1Sum += x[j].x;
+					x2Sum += x[j].y;
+					noPointsInCluster++;
+				}
+
+			if (centers[i].x == (x1Sum / noPointsInCluster) &&
+				centers[i].y == (x2Sum / noPointsInCluster))
+				stop = true;
+			else 
+				centers[i].x = x1Sum / noPointsInCluster,
+				centers[i].y = x2Sum / noPointsInCluster;
+			
+		}
+	}
+
+	Mat img(src.rows, src.cols, CV_8UC3, Scalar(255, 255, 255));
+	Vec3b* colors = new Vec3b[k];
+	srand(time(NULL));
+	for (int i = 0; i < k; i++) 
+	{
+		unsigned char r = rand() % 256;
+		unsigned char g = rand() % 256;
+		unsigned char b = rand() % 256;
+		colors[i] = { r, g, b };
+	}
+
+
+	for (int i = 0; i < n; i++) 
+	{
+		PointCluster point = x[i];
+		img.at<Vec3b>(point.x, point.y) = colors[point.cluster];
+	}
+
+	//voronoi
+	Mat voronoi(src.rows, src.cols, CV_8UC3);
+	for (int i = 0; i < voronoi.rows; i++)
+		for (int j = 0; j < voronoi.cols; j++) 
+		{
+			int min = INT_MAX;
+			int label;
+			for (int t = 0; t < k; t++) 
+			{
+				int dist = distPoints(PointCluster{ i, j, 0 }, centers[t]);
+				if (dist < min) 
+				{
+					min = dist;
+					label = t;
+				}
+			}
+			voronoi.at<Vec3b>(i, j) = colors[label];
+		}
+
+	imshow("original", src);
+	imshow("clusters", img);
+	imshow("voronoi", voronoi);
+	waitKey(0);
+}
+
 int main()
 {
 	int op;
@@ -513,6 +922,11 @@ int main()
 		printf(" 8 - Snap frame from live video\n");
 		printf(" 9 - Mouse callback demo\n");
 		printf(" 10 - Lab 1 - Least Mean Square\n");
+		printf(" 11 - Lab 2 - RANSAC Line Fitting\n");
+		printf(" 12 - Lab 3 - Hough\n");
+		printf(" 13 - Lab 4 - Distance transform and pattern matching\n");
+		printf(" 14 - Lab 5 - Statistical Data Analysis\n");
+		printf(" 13 - Lab 6 - K means clustering\n");
 		printf(" 0 - Exit\n\n");
 		printf("Option: ");
 		scanf("%d", &op);
@@ -525,10 +939,9 @@ int main()
 			testOpenImagesFld();
 			break;
 		case 3:
-			testParcurgereSimplaDiblookStyle(); //diblook style
+			testParcurgereSimplaDiblookStyle();
 			break;
 		case 4:
-			//testColor2Gray();
 			testBGR2HSV();
 			break;
 		case 5:
@@ -548,6 +961,21 @@ int main()
 			break;
 		case 10:
 			LeastMeanSquare();
+			break;
+		case 11:
+			RANSACLineFitting();
+			break;
+		case 12:
+			Hough();
+			break;
+		case 13:
+			DistanceTransformAndPatternMatching();
+			break;
+		case 14:
+			StatisticalDataAnalysis();
+			break;
+		case 15:
+			KmeansClustering();
 			break;
 		}
 	} while (op != 0);

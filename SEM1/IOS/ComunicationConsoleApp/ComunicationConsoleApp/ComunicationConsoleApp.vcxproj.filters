@@ -18,7 +18,7 @@
     <ClCompile Include="Menu-e.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestCom1DT-e.cpp">
+    <ClCompile Include="AppScroll-e.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,6 +30,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Hw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PCI-e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PCI-vendor-dev.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

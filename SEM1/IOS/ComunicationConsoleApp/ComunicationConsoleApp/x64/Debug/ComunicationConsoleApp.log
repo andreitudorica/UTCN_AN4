@@ -1,4 +1,8 @@
 ﻿  Menu-e.cpp
-  TestCom1DT-e.cpp
+  AppScroll-e.cpp
+d:\andrei\scoala\an4\sem1\ios\comunicationconsoleapp\comunicationconsoleapp\appscroll-e.cpp(134): warning C4244: 'argument': conversion from 'DWORD' to 'BYTE', possible loss of data
+d:\andrei\scoala\an4\sem1\ios\comunicationconsoleapp\comunicationconsoleapp\appscroll-e.cpp(148): warning C4002: too many actual parameters for macro 'LOWORD'
   Generating Code...
-  ComunicationConsoleApp.vcxproj -> D:\Andrei\Scoala\AN4\SEM1\IOS\ComunicationConsoleApp\x64\Debug\ComunicationConsoleApp.exe
+TRACKER : error TRK0005: Failed to locate: "rc.exe". The system cannot find the file specified.
+  
+  

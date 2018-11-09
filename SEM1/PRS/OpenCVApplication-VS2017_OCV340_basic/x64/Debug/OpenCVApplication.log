@@ -1,9 +1,23 @@
 ﻿  OpenCVApplication.cpp
-d:\andrei\scoala\an 4\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(464): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-d:\andrei\scoala\an 4\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(481): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-d:\andrei\scoala\an 4\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(487): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-d:\andrei\scoala\an 4\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(488): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  OpenCVApplication.vcxproj -> D:\Andrei\Scoala\AN 4\PRS\OpenCVApplication-VS2017_OCV340_basic\x64\Debug\OpenCVApplication.exe
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(466): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(483): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(489): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(490): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(503): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(527): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(528): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(529): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(577): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(577): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(594): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(742): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(785): warning C4091: 'typedef ': ignored on left of 'PointCluster' when no variable is declared
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(807): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(811): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(831): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(866): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(891): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  OpenCVApplication.vcxproj -> D:\Andrei\Scoala\AN4\SEM1\PRS\OpenCVApplication-VS2017_OCV340_basic\x64\Debug\OpenCVApplication.exe
   OpenCV\dll\Debug\opencv_ffmpeg340_64.dll
   OpenCV\dll\Debug\opencv_world340d.dll
           2 file(s) copied.

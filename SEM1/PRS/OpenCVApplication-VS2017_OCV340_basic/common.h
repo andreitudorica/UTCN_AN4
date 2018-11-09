@@ -13,7 +13,8 @@ using namespace cv;
 #define min_(x,y) ((x) < (y) ? (x) : (y))
 #define isNan(x) ((x) != (x) ? 1 : 0)
 
-class FileGetter{
+class FileGetter
+{
 	WIN32_FIND_DATAA found;	
 	HANDLE hfind;
 	char folder[MAX_PATH];			
