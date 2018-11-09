@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Assignment1_2:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Assignment1_2/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Assignment1_2" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-servlet-api:8.5.34" />
+          <element id="library" level="project" name="Hibernate 5.3.7-5.3.7" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.10-FINAL" />
+          <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.3.0" />
+        </element>
+        <element id="library" level="project" name="Hibernate 5.3.7-5.3.7" />
+        <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.10-FINAL" />
+        <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-servlet-api:8.5.34" />
+        <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.3.0" />
+        <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+      </element>
+    </root>
+  </artifact>
+</component>
