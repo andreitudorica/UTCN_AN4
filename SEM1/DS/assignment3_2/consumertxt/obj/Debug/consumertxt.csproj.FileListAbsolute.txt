@@ -1,0 +1,6 @@
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumertxt\bin\Debug\consumertxt.exe.config
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumertxt\bin\Debug\consumertxt.exe
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumertxt\bin\Debug\consumertxt.pdb
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumertxt\obj\Debug\consumertxt.csproj.CoreCompileInputs.cache
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumertxt\obj\Debug\consumertxt.exe
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumertxt\obj\Debug\consumertxt.pdb

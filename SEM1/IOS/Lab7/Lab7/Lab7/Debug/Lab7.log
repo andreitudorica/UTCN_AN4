@@ -1,0 +1,12 @@
+﻿  AppScroll-e.cpp
+d:\andrei\scoala\an4\sem1\ios\lab7\lab7\lab7\appscroll-e.cpp(216): warning C4293: '<<': shift count negative or too big, undefined behavior
+d:\andrei\scoala\an4\sem1\ios\lab7\lab7\lab7\appscroll-e.cpp(220): warning C4293: '<<': shift count negative or too big, undefined behavior
+d:\andrei\scoala\an4\sem1\ios\lab7\lab7\lab7\appscroll-e.cpp(50): warning C4715: 'getBaseAddresses': not all control paths return a value
+AppScroll-e.obj : error LNK2019: unresolved external symbol _HwOpen referenced in function "int __cdecl AppScroll(struct HWND__ *)" (?AppScroll@@YAHPAUHWND__@@@Z)
+AppScroll-e.obj : error LNK2019: unresolved external symbol _HwClose referenced in function "int __cdecl AppScroll(struct HWND__ *)" (?AppScroll@@YAHPAUHWND__@@@Z)
+AppScroll-e.obj : error LNK2019: unresolved external symbol ___inp referenced in function "void __cdecl diagnostic(unsigned short)" (?diagnostic@@YAXG@Z)
+AppScroll-e.obj : error LNK2019: unresolved external symbol ___inpw referenced in function "void __cdecl identifyDevice(unsigned short,unsigned short,int)" (?identifyDevice@@YAXGGH@Z)
+AppScroll-e.obj : error LNK2019: unresolved external symbol ___outp referenced in function "void __cdecl diagnostic(unsigned short)" (?diagnostic@@YAXG@Z)
+AppScroll-e.obj : error LNK2019: unresolved external symbol __inmdw referenced in function "unsigned long __cdecl getBaseAddresses(unsigned char,unsigned char,unsigned char,int)" (?getBaseAddresses@@YAKEEEH@Z)
+Hw64.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+D:\Andrei\Scoala\AN4\SEM1\IOS\Lab7\Lab7\Debug\Lab7.exe : fatal error LNK1120: 6 unresolved externals

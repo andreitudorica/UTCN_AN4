@@ -1,0 +1,7 @@
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumer\bin\Debug\consumer.exe.config
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumer\bin\Debug\consumer.exe
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumer\bin\Debug\consumer.pdb
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumer\obj\Debug\consumer.csproj.CoreCompileInputs.cache
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumer\obj\Debug\consumer.exe
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumer\obj\Debug\consumer.pdb
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment3_2\consumer\obj\Debug\consumer.csprojAssemblyReference.cache

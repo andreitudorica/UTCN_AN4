@@ -9,6 +9,8 @@ public class FlightEntity {
     private int id;
     private int number;
     private String airplaneType;
+    private String arrivalLocation;
+    private String departureLocation;
     private Timestamp departure;
     private Timestamp arrival;
 
@@ -41,6 +43,27 @@ public class FlightEntity {
     public void setAirplaneType(String airplaneType) {
         this.airplaneType = airplaneType;
     }
+
+    @Basic
+    @Column(name = "arrivalLocation")
+    public String getArrivalLocation() {
+        return arrivalLocation;
+    }
+
+    public void setArrivalLocation(String arrivalLocation) {
+        this.arrivalLocation = arrivalLocation;
+    }
+
+    @Basic
+    @Column(name = "departureLocation")
+    public String getDepartureLocation() {
+        return departureLocation;
+    }
+
+    public void setDepartureLocation(String departureLocation) {
+        this.departureLocation = departureLocation;
+    }
+
 
     @Basic
     @Column(name = "departure")

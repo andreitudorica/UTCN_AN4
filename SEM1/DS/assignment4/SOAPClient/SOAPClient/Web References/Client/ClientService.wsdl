@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="Assignment4" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="Assignment4" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="Assignment4">
+      <s:element name="ListPackages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListPackagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListPackagesResult" type="tns:ArrayOfPackageDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPackageDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PackageDTO" nillable="true" type="tns:PackageDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PackageDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Receiver" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SenderCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="isTracked" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tracking" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SearchPackages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchPackagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchPackagesResult" type="tns:ArrayOfPackageDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListPackagesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListPackages" />
+  </wsdl:message>
+  <wsdl:message name="ListPackagesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListPackagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchPackagesSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchPackages" />
+  </wsdl:message>
+  <wsdl:message name="SearchPackagesSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchPackagesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClientServiceSoap">
+    <wsdl:operation name="ListPackages">
+      <wsdl:input message="tns:ListPackagesSoapIn" />
+      <wsdl:output message="tns:ListPackagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPackages">
+      <wsdl:input message="tns:SearchPackagesSoapIn" />
+      <wsdl:output message="tns:SearchPackagesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientServiceSoap" type="tns:ClientServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListPackages">
+      <soap:operation soapAction="Assignment4/ListPackages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPackages">
+      <soap:operation soapAction="Assignment4/SearchPackages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientServiceSoap12" type="tns:ClientServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListPackages">
+      <soap12:operation soapAction="Assignment4/ListPackages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPackages">
+      <soap12:operation soapAction="Assignment4/SearchPackages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientService">
+    <wsdl:port name="ClientServiceSoap" binding="tns:ClientServiceSoap">
+      <soap:address location="http://localhost:61601/ClientService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientServiceSoap12" binding="tns:ClientServiceSoap12">
+      <soap12:address location="http://localhost:61601/ClientService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,4 +1,5 @@
 ﻿  AppScroll-e.cpp
-d:\andrei\scoala\an4\sem1\ios\lab4\lab4\appscroll-e.cpp(141): warning C4002: too many actual parameters for macro 'LOWORD'
+d:\andrei\scoala\an4\sem1\ios\lab4\lab4\appscroll-e.cpp(141): warning C4002: too many arguments for function-like macro invocation 'LOWORD'
+  MenuScroll-e.cpp
+  Generating Code...
   Lab4.vcxproj -> D:\Andrei\Scoala\AN4\SEM1\IOS\Lab4\x64\Debug\Lab4.exe
-  Lab4.vcxproj -> D:\Andrei\Scoala\AN4\SEM1\IOS\Lab4\x64\Debug\Lab4.pdb (Partial PDB)

@@ -1,0 +1,23 @@
+﻿Build started 08.10.2018 13:20:25.
+     1>Project "D:\Student\30442\Dornea Mihai\Lab2\Lab2\Lab2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\Lab2.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\Lab2.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Lab2.cpp
+         Lab2.cpp
+     1>Lab2.cpp(33): warning C4101: 'byVal' : unreferenced local variable
+     1>Lab2.cpp(35): warning C4101: 'i' : unreferenced local variable
+     1>Lab2.cpp(34): warning C4101: 'bSucc' : unreferenced local variable
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Student\30442\Dornea Mihai\Lab2\Release\Lab2.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Student\30442\Dornea Mihai\Lab2\Release\Lab2.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Student\30442\Dornea Mihai\Lab2\Release\Lab2.lib" /MACHINE:X86 /SAFESEH Release\Lab2.obj
+         Release\stdafx.obj
+     1>Lab2.obj : error LNK2001: unresolved external symbol _HwOpen
+     1>Lab2.obj : error LNK2001: unresolved external symbol ___outp
+     1>Lab2.obj : error LNK2001: unresolved external symbol ___inp
+     1>Lab2.obj : error LNK2001: unresolved external symbol _HwClose
+     1>D:\Student\30442\Dornea Mihai\Lab2\Release\Lab2.exe : fatal error LNK1120: 4 unresolved externals
+     1>Done Building Project "D:\Student\30442\Dornea Mihai\Lab2\Lab2\Lab2.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.02

@@ -2,11 +2,112 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Assignment1_2:war exploded" />
+      <artifact name="Assignment1Project:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6010621-bb4c-4224-8276-388388dc2929" name="Default Changelist" comment="" />
+    <list default="true" id="9989a715-9a1d-44db-a262-2869fc25121d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Assignment1_2_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/304409b6-0bb6-49a1-bfcf-08b34b38c0ac.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a5747ec6-27ff-4198-bded-71729b97b03e.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_3_7_5_3_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_3_7_5_3_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_10_FINAL.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_servlet_api_8_5_34.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1_2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbScripts/assignment1_2_flight.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbScripts/assignment1_2_location.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbScripts/assignment1_2_user.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/antlr-2.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/byte-buddy-1.8.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/classes/dao/FlightEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/classes/dao/LocationEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/classes/dao/UserEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/classes/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/classes/repositories/UsersRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/classes/servlets/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/classmate-1.3.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/dom4j-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/hibernate-commons-annotations-5.0.4.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/hibernate-core-5.3.7.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/jandex-2.0.5.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/javassist-3.23.1-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/javax.activation-api-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/javax.persistence-api-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/byte-buddy-1.8.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/dom4j-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/hibernate-commons-annotations-5.0.4.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/hibernate-core-5.3.7.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/jandex-2.0.5.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/javassist-3.23.1-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/javax.activation-api-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/javax.persistence-api-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.47.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/poi-ooxml-schemas-3.10-FINAL.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/stax-api-1.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/tomcat-servlet-api-8.5.34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/lib/xmlbeans-2.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/mysql-connector-java-5.1.47.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/poi-ooxml-schemas-3.10-FINAL.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/stax-api-1.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/tomcat-servlet-api-8.5.34.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/WEB-INF/xmlbeans-2.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Assignment1_2_war_exploded/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/FlightEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/FlightEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/LocationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/LocationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/UsersRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/FlightEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/FlightEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/LocationEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/LocationEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repositories/UsersRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment2_1" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment2_1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IOS/ComunicationConsoleApp/.vs/ComunicationConsoleApp/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../IOS/ComunicationConsoleApp/.vs/ComunicationConsoleApp/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IOS/ComunicationConsoleApp/.vs/ComunicationConsoleApp/v15/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../IOS/ComunicationConsoleApp/.vs/ComunicationConsoleApp/v15/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IOS/ComunicationConsoleApp/.vs/ComunicationConsoleApp/v15/ipch/AutoPCH/27ede657d1d0a74c/APPSCROLL-E.ipch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/.vs/OpenCVApplication/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/.vs/OpenCVApplication/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/.vs/OpenCVApplication/v15/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/.vs/OpenCVApplication/v15/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/.vs/OpenCVApplication/v15/ipch/a3937f63208b13d6.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/.vs/OpenCVApplication/v15/ipch/a3937f63208b13d6.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/COV.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/COV.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/OpenCVApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/OpenCVApplication.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/OpenCVApplication.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/OpenCVApplication.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVAp.32A91DE2.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVAp.32A91DE2.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVAp.32A91DE2.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVAp.32A91DE2.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVAp.32A91DE2.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVAp.32A91DE2.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVAp.32A91DE2.tlog/OpenCVApplication.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVAp.32A91DE2.tlog/OpenCVApplication.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVAp.32A91DE2.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVAp.32A91DE2.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.Build.CppClean.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.Build.CppClean.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.pch" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.pch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/OpenCVApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/common.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/common.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/stdafx.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/stdafx.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/vc141.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/vc141.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/vc141.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRS/OpenCVApplication-VS2017_OCV340_basic/x64/Debug/vc141.pdb" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,6 +115,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/assignment1_2$TomcatServer.ic" NAME="TomcatServer Coverage Results" MODIFIED="1541944554922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -30,127 +134,142 @@
     <select />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="-945966162">
+    <session id="60705761">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.49" value="1" />
+          <entry key="project.open.time.54" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="1" />
+          <entry key="html" value="2" />
           <entry key="iml" value="1" />
-          <entry key="java" value="7" />
+          <entry key="java" value="11" />
           <entry key="jsp" value="1" />
-          <entry key="sql" value="1" />
-          <entry key="xml" value="6" />
+          <entry key="xml" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="1" />
+          <entry key="HTML" value="2" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="7" />
+          <entry key="JAVA" value="11" />
           <entry key="JSP" value="1" />
-          <entry key="Scratch" value="1" />
-          <entry key="XML" value="6" />
+          <entry key="XML" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="86" />
-          <entry key="java" value="873" />
-          <entry key="jsp" value="13" />
-          <entry key="txt" value="26" />
-          <entry key="xml" value="85" />
+          <entry key="html" value="37" />
+          <entry key="java" value="6149" />
+          <entry key="txt" value="13" />
+          <entry key="xml" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="86" />
-          <entry key="JAVA" value="873" />
-          <entry key="JSP" value="13" />
-          <entry key="PLAIN_TEXT" value="26" />
-          <entry key="XML" value="85" />
+          <entry key="HTML" value="37" />
+          <entry key="JAVA" value="6149" />
+          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="XML" value="134" />
         </counts>
       </usages-collector>
+    </session>
+    <session id="-442208257">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="groovy" value="1" />
+          <entry key="html" value="2" />
+          <entry key="iml" value="2" />
+          <entry key="java" value="12" />
+          <entry key="sql" value="1" />
+          <entry key="xml" value="19" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="2" />
+          <entry key="IDEA_MODULE" value="2" />
+          <entry key="JAVA" value="12" />
+          <entry key="Scratch" value="2" />
+          <entry key="XML" value="19" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="73" />
+          <entry key="java" value="1713" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="73" />
+          <entry key="JAVA" value="1713" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+      <usages-collector id="statistics.spring.boot.run.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="21" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="21" />
+            <state relative-caret-position="1309">
+              <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="88" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/Login.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/ClientServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="527">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repositories/UsersRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/util/HibernateUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#415#416#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="289">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/304409b6-0bb6-49a1-bfcf-08b34b38c0ac/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/AdminServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-              <folding>
-                <element signature="e#545#550#0" expanded="true" />
-                <element signature="e#562#567#0" expanded="true" />
-                <element signature="e#601#606#0" expanded="true" />
-                <element signature="e#633#638#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="5865">
+              <caret line="360" selection-start-line="360" selection-end-line="360" />
             </state>
           </provider>
         </entry>
@@ -167,25 +286,24 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>factory = new Configuration().configure().buildSessionFactory();</find>
-      <find>&amp;</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>&amp;amp;</replace>
-    </replaceStrings>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/HibernateUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/HibernateUtil.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/Login.java" />
-        <option value="$PROJECT_DIR$/src/main/java/repositories/UsersRepository.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/.idea/dataSources/1028e4be-85f1-484d-8f9f-c8da1af92fb1.xml" />
+        <option value="$PROJECT_DIR$/Assignment1Project.iml" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/FlightEntity.java" />
+        <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/AdminServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/ClientServlet.java" />
       </list>
     </option>
   </component>
@@ -209,119 +327,99 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-10" />
-    <option name="width" value="1942" />
-    <option name="height" value="2092" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="width" value="974" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment1_2" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment1_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment1_2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment1_2" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment1_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment1_2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment1_2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment1_2" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment1_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment1_2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment1_2" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment1_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment1_2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment1_2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="repositories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment1_2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="servlets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment1_2" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment1_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment1_2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment1_2" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment1_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment1_2" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment1_2" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment1_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment1_2" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Assignment1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="JPA.DatabaseSchemaImportDialog" value="a5747ec6-27ff-4198-bded-71729b97b03e" />
+    <property name="JPA.DatabaseSchemaImportDialog" value="51499237-abfc-47ba-9d28-37b3600997c6" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541541988404" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541953425126" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/ojdbc6.jar/ojdbc6.jar!/" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2045977" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../LICENTA/OSMAND" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\macadamian\IdeaProjects\Assignment1_2\src\main\resources" />
-      <recent name="C:\Users\macadamian\IdeaProjects\Assignment1_2\src\main\java" />
-      <recent name="C:\Users\macadamian\IdeaProjects\Assignment1_2\src" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\An4Sem1\DS\DS_30441_Radu_Matei_Birle\Assignment1Project\out\artifacts\Assignment1Project_war_exploded\WEB-INF\lib" />
+      <recent name="D:\An4Sem1\DS\DS_30441_Radu_Matei_Birle\Assignment1Project\web\WEB-INF\lib" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="dao" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\macadamian\IdeaProjects\Assignment1_2\out\artifacts\Assignment1_2_war_exploded\WEB-INF" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\An4Sem1\DS\DS_30441_Radu_Matei_Birle\Assignment1Project\src\main\resources" />
+      <recent name="D:\An4Sem1\DS\DS_30441_Radu_Matei_Birle\Assignment1Project\src\main\java\util" />
+      <recent name="D:\An4Sem1\DS\DS_30441_Radu_Matei_Birle\Assignment1Project\out\artifacts\Assignment1Project_war_exploded\WEB-INF\lib" />
+      <recent name="D:\An4Sem1\DS\DS_30441_Radu_Matei_Birle\Assignment1Project\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -340,15 +438,14 @@
     <configuration name="TomcatServer" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.34" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Assignment1_2:war exploded">
+        <artifact name="Assignment1Project:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Assignment1_2" />
-        <option name="HTTP_PORT" value="8023" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Assignment1Project" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -356,7 +453,7 @@
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51384" />
+        <option name="DEBUG_PORT" value="52385" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -405,8 +502,71 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Assignment1_2:war exploded" />
+          <artifact name="Assignment1Project:war exploded" />
         </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.341" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_Assignment1Project" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52385" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -415,35 +575,72 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e6010621-bb4c-4224-8276-388388dc2929" name="Default Changelist" comment="" />
-      <created>1541520496636</created>
+      <changelist id="9989a715-9a1d-44db-a262-2869fc25121d" name="Default Changelist" comment="" />
+      <created>1541528001120</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1541520496636</updated>
-      <workItem from="1541520502507" duration="3085000" />
-      <workItem from="1541523685989" duration="213000" />
-      <workItem from="1541524159474" duration="14361000" />
-      <workItem from="1541571819620" duration="4597000" />
+      <updated>1541528001120</updated>
+      <workItem from="1541528011290" duration="210000" />
+      <workItem from="1541528279652" duration="4904000" />
+      <workItem from="1541533693555" duration="983000" />
+      <workItem from="1541534788600" duration="294000" />
+      <workItem from="1541535230639" duration="9572000" />
+      <workItem from="1541573821327" duration="6407000" />
+      <workItem from="1541851453679" duration="1634000" />
+      <workItem from="1541853273806" duration="14559000" />
+      <workItem from="1541869479147" duration="1315000" />
+      <workItem from="1541870837521" duration="11875000" />
+      <workItem from="1541945855694" duration="2671000" />
+      <workItem from="1542180087336" duration="1503000" />
+      <workItem from="1542723084482" duration="597000" />
+      <workItem from="1544026966374" duration="801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22256000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="57325000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1933" height="1053" extended-state="7" />
+    <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Persistence" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49622166" visible="true" weight="0.29706666" />
+      <window_info id="Structure" order="1" sideWeight="0.50377834" side_tool="true" weight="0.18910742" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" sideWeight="0.50125945" side_tool="true" weight="0.18910742" />
+      <window_info id="Persistence" order="8" sideWeight="0.50125945" side_tool="true" weight="0.18910742" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3253796" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3295082" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.19739696" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3295082" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32922733" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" visible="true" weight="0.3296" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -451,31 +648,29 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="8" visible="true" weight="0.12906666" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33188722" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39804772" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286334" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.329718" />
-      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.329718" />
-      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="9" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.3296" />
+      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -483,41 +678,72 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/Login.java</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>usersRepository.addUser(request.getParameter(&quot;username&quot;), request.getParameter(&quot;password&quot;),new String( &quot;admin&quot;))` `</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>usersRepository.addUser(request.getParameter(&quot;username&quot;), request.getParameter(&quot;password&quot;),new String( &quot;admin&quot;))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>new UsersRepository()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/web/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/Assignment1_2_war_exploded.xml">
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Assignment1Project_war_exploded/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="46" lean-forward="true" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="19" column="68" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/extensions/com.intellij.database/data/extractors/JSON-Groovy.json.groovy">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/51499237-abfc-47ba-9d28-37b3600997c6/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dataSources/51499237-abfc-47ba-9d28-37b3600997c6.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/dataSources/1028e4be-85f1-484d-8f9f-c8da1af92fb1.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Hibernate_5_3_7_5_3_7.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dataSources.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dataSources.local.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment1Project.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/Assignment1Project_war_exploded.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/LocationEntity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -526,164 +752,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/FlightEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment1_2.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/304409b6-0bb6-49a1-bfcf-08b34b38c0ac/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding>
-            <element signature="e#545#550#0" expanded="true" />
-            <element signature="e#562#567#0" expanded="true" />
-            <element signature="e#601#606#0" expanded="true" />
-            <element signature="e#633#638#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="21" />
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repositories/UsersRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/FlightEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-          </folding>
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/Login.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+        <state relative-caret-position="85">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="88" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>Assignment1_2:war exploded</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2045977" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Web</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Assignment1_2</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2045977" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Hibernate 5.3.7-5.3.7</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/HibernateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/AdminServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5865">
+          <caret line="360" selection-start-line="360" selection-end-line="360" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/ClientServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
