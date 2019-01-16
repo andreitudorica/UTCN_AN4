@@ -1,0 +1,6 @@
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Common\bin\Debug\Common.dll
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Common\bin\Debug\Common.pdb
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Common\obj\Debug\Common.dll
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Common\obj\Debug\Common.pdb

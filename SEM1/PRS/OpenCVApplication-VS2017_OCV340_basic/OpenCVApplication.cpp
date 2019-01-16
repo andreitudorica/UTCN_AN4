@@ -1106,6 +1106,122 @@ void naiveBayesianClassifier()
 	}
 }
 
+Mat calcHist(Mat img, int nr_bins) {
+	Mat hist_vec(1, nr_bins * 3, CV_32S, Scalar(0));
+	int el_per_bin = 256 / nr_bins;
+
+	for (int i = 0; i < img.rows; i++)
+		for (int j = 0; j < img.cols; j++) {
+			Vec3b value = img.at<Vec3b>(i, j);
+			hist_vec.at<int>(value[0] / el_per_bin)++;
+			hist_vec.at<int>(nr_bins + (value[1] / el_per_bin))++;
+			hist_vec.at<int>(2 * nr_bins + (value[2] / el_per_bin))++;
+		}
+	return hist_vec;
+}
+
+float calcDist(Mat x, Mat y) {
+	float dist = 0.0;
+	for (int i = 0; i < x.cols; i++)
+		dist += pow(x.at<int>(0, i) - y.at<int>(0, i), 2);
+	return sqrt(dist);
+}
+
+struct Neighbour {
+	int index;
+	float distance;
+
+	bool operator < (const Neighbour& n) const
+	{
+		return (distance < n.distance);
+	}
+};
+
+bool compareNeighbours(const Neighbour& n1, const Neighbour& n2) {
+	return n1.distance < n2.distance;
+}
+
+void kNearestClassifier(int no_of_bins, int k) {
+	const int nrclasses = 6;
+	char classes[nrclasses][10] = { "beach", "city", "desert", "forest", "landscape", "snow" };
+
+	int feature_dim = no_of_bins * 3;
+	Mat X(0, feature_dim, CV_32S);
+	vector<int> Y;
+
+	char* fname = (char*)malloc(256 * sizeof(char));
+	for (int c = 0; c < nrclasses; c++) {
+		int fileNr = 0;
+		while (1) {
+			sprintf(fname, "images/images_KNN/train/%s/%06d.jpeg", classes[c], fileNr++);
+			Mat img = imread(fname, CV_LOAD_IMAGE_COLOR);
+			if (img.cols == 0)
+				break;
+
+			//add the histogram vec to global hist matrix
+			X.push_back(calcHist(img, no_of_bins));
+			Y.push_back(c);
+		}
+		//cout << "class " << c<< ": " << X.rows << " " << Y.size();
+	}
+	cout << "Finished computing feature vectors";
+
+	//load test image
+	Mat confusionMat(nrclasses, nrclasses, CV_32S, Scalar(0));
+	for (int c = 0; c < nrclasses; c++) {
+		int fileNr = 0;
+		while (1) {
+			sprintf(fname, "images_KNN/test/%s/%06d.jpeg", classes[c], fileNr++);
+			Mat img = imread(fname, CV_LOAD_IMAGE_COLOR);
+			if (img.cols == 0)
+				break;
+
+			Mat hist_vec = calcHist(img, no_of_bins);
+			vector<Neighbour> neighbours;
+			// compute distances
+			for (int i = 0; i < X.rows; i++)
+				neighbours.push_back(Neighbour{ i,  calcDist(hist_vec, X.row(i)) });
+
+			// sort neighbour vector
+			sort(neighbours.begin(), neighbours.end());
+			int classVotes[6] = { 0, 0, 0, 0, 0, 0 };
+			for (int i = 0; i < k; i++)
+				classVotes[Y.at(neighbours.at(i).index)]++;
+			// predict class
+			int max = classVotes[0], predictedClass = 0;
+			for (int i = 1; i< nrclasses; i++)
+				if (classVotes[i] > max) {
+					max = classVotes[i];
+					predictedClass = i;
+				}
+
+			confusionMat.at<int>(c, predictedClass)++;
+			//free(classVotes);
+		}
+	}
+
+	// compute confusion matrix
+	float accuracy;
+	int mainDiagCount = 0;
+	int nr_el = 0;
+	cout << "Confusion matrix:\n";
+	for (int i = 0; i < nrclasses; i++) {
+		for (int j = 0; j < nrclasses; j++) {
+			if (i == j)
+				mainDiagCount += confusionMat.at<int>(i, i);
+			nr_el += confusionMat.at<int>(i, j);
+			cout << confusionMat.at<int>(i, j) << " ";
+		}
+		cout << endl;
+	}
+	cout << "\nAccuracy: " << (float)(mainDiagCount) / nr_el;
+
+	free(fname);
+	char a;
+	scanf("%c", &a);
+	scanf("%c", &a);
+}
+
 void Perceptron()
 {
 	char fname[MAX_PATH];
@@ -1476,6 +1592,160 @@ void AdaBoostCaller()
 	}
 }
 
+void FinalProjectWithLibrary()
+{
+
+}
+
+
+Mat erosionOnce(Mat img)
+{
+	Mat copy(img.rows, img.cols, CV_8UC1);
+	img.copyTo(copy);
+	for (int i = 1; i < img.rows - 1; i++)
+		for (int j = 1; j < img.cols - 1; j++)
+		{
+			if (img.at<uchar>(i, j) == 0)
+				if (img.at<uchar>(i - 1, j) == 255 ||
+					img.at<uchar>(i - 1, j - 1) == 255 ||
+					img.at<uchar>(i, j - 1) == 255 ||
+					img.at<uchar>(i + 1, j - 1) == 255 ||
+					img.at<uchar>(i + 1, j) == 255 ||
+					img.at<uchar>(i + 1, j + 1) == 255 ||
+					img.at<uchar>(i, j + 1) == 255 ||
+					img.at<uchar>(i - 1, j + 1) == 255)
+
+					copy.at<uchar>(i, j) = 255;
+
+		}
+	return copy;
+}
+
+Mat viz;
+Point cTL, cBR;
+int ci, cj;
+void fill()
+{
+	//cout << ci << ' ' << cj << '\n';
+	viz.at<uchar>(ci, cj) = 128;
+	if (ci < cTL.x)
+		cTL.x = ci;
+	if (cj < cTL.y)
+		cTL.y = cj;
+	if (ci > cBR.x)
+		cBR.x = ci;
+	if (cj > cBR.y)
+		cBR.y = cj;
+	if (ci > 0 && viz.at<uchar>(ci - 1, cj) == 255) { ci--; fill(); ci++; }
+	if (cj > 0 && viz.at<uchar>(ci, cj - 1) == 255) { cj--; fill(); cj++; }
+	if (ci < viz.rows - 1 && viz.at<uchar>(ci + 1, cj) == 255) { ci++; fill(); ci--; }
+	if (cj < viz.cols - 1 && viz.at<uchar>(ci, cj + 1) == 255) { cj++; fill(); cj--; }
+
+}
+Point TL, BR;
+void GetContourOfBiggestShape(Mat src)
+{
+	TL = Point(0, 0);
+	BR = Point(0, 0);
+	int currentArea, maxArea = 0;
+	
+	src.copyTo(viz);
+	for (int i = 0; i < src.rows; i++)
+		for (int j = 0; j < src.cols; j++)
+		{
+			if (src.at<uchar>(i, j) == 255 && viz.at<uchar>(i, j) == 255)
+			{
+				currentArea = 0;
+				cTL = Point(i, j);
+				cBR = Point(i, j);
+				ci = i; cj = j;
+				fill();
+				if ((cBR.x - cTL.x)*(cBR.y - cTL.y) > maxArea)
+				{
+					maxArea = (cBR.x - cTL.x)*(cBR.y - cTL.y);
+					TL.x = cTL.x;
+					TL.y = cTL.y;
+					BR.x = cBR.x;
+					BR.y = cBR.y;
+				}
+			}
+		}
+}
+
+void FinalProjectWithoutLibrary()
+{
+	char fname[MAX_PATH];
+	while (openFileDlg(fname))
+	{
+		Mat src = imread(fname, CV_LOAD_IMAGE_GRAYSCALE);
+
+		//# compute the Scharr gradient magnitude representation of the images
+				// in both the x and y direction using OpenCV 2.4
+		int ddepth = CV_32F;
+		Mat gradX, gradY;
+		Sobel(src, gradX, ddepth, 1, 0, -1);
+		Sobel(src, gradY, ddepth, 0, 1, -1);
+
+		// subtract the y - gradient from the x - gradient
+		Mat gradient;
+		subtract(gradX, gradY, gradient);
+		convertScaleAbs(gradient, gradient);
+		imshow("gradient", gradient);
+
+		// blur and threshold the image
+		Mat blurred;
+		blur(gradient, blurred, Size(9, 9));
+		Mat thresh;
+		threshold(blurred, thresh, 225, 255, THRESH_BINARY);
+		imshow("threshold", thresh);
+
+		// construct a closing kernel and apply it to the thresholded image
+		Mat kernel, closed;
+		kernel = getStructuringElement(MORPH_RECT, Size(21, 7));
+		morphologyEx(thresh, closed, MORPH_CLOSE, kernel);
+
+		imshow("closed", closed);
+
+
+		// perform a series of erosions and dilations
+		kernel = getStructuringElement(MORPH_RECT, Size(5, 5));
+		erode(closed, closed, kernel, Point(-1, -1), 4);
+		dilate(closed, closed, kernel, Point(-1, -1), 4);
+		imshow("closed refactored", closed);
+		//find the contours in the thresholded image, then sort the contours
+		// by their area, keeping only the largest one
+		//Mat contours;
+		//findContours(closed, contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+		//cnts = imutils.grab_contours(cnts)
+		//	c = sorted(cnts, key = cv2.contourArea, reverse = True)[0]
+
+		//	// compute the rotated bounding box of the largest contour
+		//	rect = cv2.minAreaRect(c)
+		//	box = boxPoints(rect);
+		//	box = np.int0(box)
+
+		//	// draw a bounding box arounded the detected barcode and display the image
+		//	cv2.drawContours(image, [box], -1, (0, 255, 0), 3)
+		GetContourOfBiggestShape(closed);
+		cvtColor(src, src, COLOR_GRAY2BGR);
+		cout << BR.x << ' ' << BR.y << '\n';
+		rectangle(src, Rect(TL.y, TL.x, BR.y- TL.y, BR.x- TL.x), CV_RGB(255, 0, 0));
+		imshow("Image", src);
+		waitKey();
+	}
+}
+
+void FinalProject()
+{
+	cout << "mode: \n1. Library\n2. No library";
+	int m;
+	cin >> m;
+	if (m == 1)
+		FinalProjectWithLibrary();
+	else
+		FinalProjectWithoutLibrary();
+}
+
 int main()
 {
 	int op;
@@ -1500,9 +1770,11 @@ int main()
 		printf(" 14 - Lab 5 - Statistical Data Analysis\n");
 		printf(" 15 - Lab 6 - K means clustering\n");
 		printf(" 16 - Lab 7 - Component Analysis\n");
-		printf(" 17 - Lab 9 - Naive Bayes Component\n");
-		printf(" 18 - Lab 10 - Linear Classifiers and the Perceptron Algorithm\n");
-		printf(" 19 - Lab 11 - Adaboost\n");
+		printf(" 17 - Lab 8 - KNN Classifier\n");
+		printf(" 18 - Lab 9 - Naive Bayes Component\n");
+		printf(" 19 - Lab 10 - Linear Classifiers and the Perceptron Algorithm\n");
+		printf(" 20 - Lab 11 - Adaboost\n");
+		printf(" 100 - Final Project - Barcode detection\n");
 		printf(" 0 - Exit\n\n");
 		printf("Option: ");
 		scanf("%d", &op);
@@ -1558,15 +1830,26 @@ int main()
 			break;
 		case 17:
 			naiveBayesianClassifier();
-
 			break;
 		case 18:
+			int m, kk;
+			cout << "m = ";
+			cin >> m;
+			cout << "k = ";
+			cin >> kk;
+			kNearestClassifier(m, kk);
+			
+			break;
+		case 19:
 			Perceptron();
 			int a;
 			cin >> a;
 			break;
-		case 19:
+		case 20:
 			AdaBoostCaller();
+			break;
+		case 100:
+			FinalProject();
 			break;
 		}
 	} while (op != 0);

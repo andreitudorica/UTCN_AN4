@@ -1,44 +1,12 @@
 ﻿  OpenCVApplication.cpp
-d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(466): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
-          with
-          [
-              _Tp=float
-          ]
-          and
-          [
-              _Tp=int
-          ]
-d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(483): warning C4244: 'argument': conversion from 'float' to '_Tp', possible loss of data
-          with
-          [
-              _Tp=int
-          ]
-d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(489): warning C4244: 'argument': conversion from 'float' to '_Tp', possible loss of data
-          with
-          [
-              _Tp=int
-          ]
-d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(490): warning C4244: 'argument': conversion from 'float' to '_Tp', possible loss of data
-          with
-          [
-              _Tp=int
-          ]
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(466): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(483): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(489): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(490): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(503): warning C4305: 'initializing': truncation from 'double' to 'float'
-d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(527): warning C4244: 'initializing': conversion from '_Tp' to 'float', possible loss of data
-          with
-          [
-              _Tp=int
-          ]
-d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(528): warning C4244: 'initializing': conversion from '_Tp' to 'float', possible loss of data
-          with
-          [
-              _Tp=int
-          ]
-d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(529): warning C4244: 'initializing': conversion from '_Tp' to 'float', possible loss of data
-          with
-          [
-              _Tp=int
-          ]
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(527): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(528): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(529): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(577): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(577): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
 d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(594): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
@@ -49,32 +17,12 @@ d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplic
 d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(831): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(866): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(891): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(976): warning C4244: 'argument': conversion from '_Tp' to 'int', possible loss of data
-          with
-          [
-              _Tp=double
-          ]
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(976): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(1120): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
 d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(1120): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(1128): warning C4305: 'initializing': truncation from 'double' to 'float'
-d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(1151): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
-          with
-          [
-              _Tp=float
-          ]
-          and
-          [
-              _Tp=int
-          ]
-d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(1152): warning C4244: 'argument': conversion from '_Tp' to '_Tp', possible loss of data
-          with
-          [
-              _Tp=float
-          ]
-          and
-          [
-              _Tp=int
-          ]
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(1151): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+d:\andrei\scoala\an4\sem1\prs\opencvapplication-vs2017_ocv340_basic\opencvapplication.cpp(1152): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   OpenCVApplication.vcxproj -> D:\Andrei\Scoala\AN4\SEM1\PRS\OpenCVApplication-VS2017_OCV340_basic\x64\Debug\OpenCVApplication.exe
   OpenCV\dll\Debug\opencv_ffmpeg340_64.dll
   OpenCV\dll\Debug\opencv_world340d.dll

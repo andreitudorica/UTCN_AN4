@@ -1,0 +1,10 @@
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Server\bin\Debug\Server.exe.config
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Server\bin\Debug\Server.exe
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Server\bin\Debug\Server.pdb
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Server\obj\Debug\Server.csproj.CopyComplete
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Server\obj\Debug\Server.exe
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Server\obj\Debug\Server.pdb
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Server\bin\Debug\Common.dll
+D:\Andrei\Scoala\AN4\SEM1\DS\assignment2_2\Server\Server\bin\Debug\Common.pdb
