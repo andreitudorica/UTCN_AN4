@@ -1153,7 +1153,7 @@ void kNearestClassifier(int no_of_bins, int k) {
 	for (int c = 0; c < nrclasses; c++) {
 		int fileNr = 0;
 		while (1) {
-			sprintf(fname, "images/images_KNN/train/%s/%06d.jpeg", classes[c], fileNr++);
+			sprintf(fname, "Images/images_KNN/train/%s/%06d.jpeg", classes[c], fileNr++);
 			Mat img = imread(fname, CV_LOAD_IMAGE_COLOR);
 			if (img.cols == 0)
 				break;
@@ -1164,14 +1164,16 @@ void kNearestClassifier(int no_of_bins, int k) {
 		}
 		//cout << "class " << c<< ": " << X.rows << " " << Y.size();
 	}
-	cout << "Finished computing feature vectors";
+	cout << "Finished computing feature vectors\n";
 
 	//load test image
 	Mat confusionMat(nrclasses, nrclasses, CV_32S, Scalar(0));
-	for (int c = 0; c < nrclasses; c++) {
+	for (int c = 0; c < nrclasses; c++) 
+	{
 		int fileNr = 0;
-		while (1) {
-			sprintf(fname, "images_KNN/test/%s/%06d.jpeg", classes[c], fileNr++);
+		while (1)
+		{
+			sprintf(fname, "Images/images_KNN/test/%s/%06d.jpeg", classes[c], fileNr++);
 			Mat img = imread(fname, CV_LOAD_IMAGE_COLOR);
 			if (img.cols == 0)
 				break;
@@ -1205,8 +1207,10 @@ void kNearestClassifier(int no_of_bins, int k) {
 	int mainDiagCount = 0;
 	int nr_el = 0;
 	cout << "Confusion matrix:\n";
-	for (int i = 0; i < nrclasses; i++) {
-		for (int j = 0; j < nrclasses; j++) {
+	for (int i = 0; i < nrclasses; i++)
+	{
+		for (int j = 0; j < nrclasses; j++)
+		{
 			if (i == j)
 				mainDiagCount += confusionMat.at<int>(i, i);
 			nr_el += confusionMat.at<int>(i, j);
@@ -1712,20 +1716,8 @@ void FinalProjectWithoutLibrary()
 		erode(closed, closed, kernel, Point(-1, -1), 4);
 		dilate(closed, closed, kernel, Point(-1, -1), 4);
 		imshow("closed refactored", closed);
-		//find the contours in the thresholded image, then sort the contours
-		// by their area, keeping only the largest one
-		//Mat contours;
-		//findContours(closed, contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
-		//cnts = imutils.grab_contours(cnts)
-		//	c = sorted(cnts, key = cv2.contourArea, reverse = True)[0]
 
-		//	// compute the rotated bounding box of the largest contour
-		//	rect = cv2.minAreaRect(c)
-		//	box = boxPoints(rect);
-		//	box = np.int0(box)
-
-		//	// draw a bounding box arounded the detected barcode and display the image
-		//	cv2.drawContours(image, [box], -1, (0, 255, 0), 3)
+		//find the objects in the image and chose the biggest one
 		GetContourOfBiggestShape(closed);
 		cvtColor(src, src, COLOR_GRAY2BGR);
 		cout << BR.x << ' ' << BR.y << '\n';
@@ -1829,16 +1821,15 @@ int main()
 			componentAnalysis();
 			break;
 		case 17:
-			naiveBayesianClassifier();
-			break;
-		case 18:
 			int m, kk;
 			cout << "m = ";
 			cin >> m;
 			cout << "k = ";
 			cin >> kk;
 			kNearestClassifier(m, kk);
-			
+			break;
+		case 18:
+			naiveBayesianClassifier();
 			break;
 		case 19:
 			Perceptron();
