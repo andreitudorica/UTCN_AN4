@@ -1,0 +1,335 @@
+(full-reset)
+
+#|(define-primitive-role 
+ este-in-comanda
+			:parent este-in-structura
+			:domain comandant
+			:range unitati-militare
+		
+		)
+	|#
+(define-primitive-role
+ este-superior-lui 
+			:inverse este-inferior-lui 
+			:transitive t
+			:domain soldat-gradat
+			:range soldat-gradat
+		)		
+		
+;;; unitati militare;
+(implies
+	unitati-militare
+	(or
+		unitate
+		subunitate
+	)
+)
+
+(disjoint unitate subunitate )
+
+(implies
+	subunitate
+	(or
+		grupa
+		pluton
+		companie 
+	)
+)
+
+(implies
+	unitate
+	(or
+		batalion 
+		brigada
+		divizie
+		corp-de-armata
+		armata
+	)
+)
+(disjoint unitati-militare persoana )
+(implies 
+	persoana
+	(and
+		(>= varsta 0)
+		(<= varsta 100)
+	)
+)
+
+(implies soldat-gradat persoana )
+
+
+
+;cine e/poate fi in comanda pentru fiecare din structuri;
+(implies (some este-in-comanda unitati-militare) (= in-rezerva 0))
+(implies (some este-in-comanda grupa) (or sergent sergent-major))
+(implies (some este-in-comanda pluton) (or locotenent capitan))
+(implies (some este-in-comanda companie) maior)
+(implies (some este-in-comanda batalion) (or maior locotenent-colonel colonel))
+(implies (some este-in-comanda brigada) (or colonel general-de-brigada))
+(implies (some este-in-comanda divizie) general-maior)
+(implies (some este-in-comanda corp-de-armata) general-locotenent)
+(implies (some este-in-comanda armata) general-de-armata)
+
+
+(implies comandant soldat-gradat)
+(equivalent comandant-de-grupa (and comandant (some este-in-comanda grupa ))   )
+(equivalent comandant-de-pluton (and comandant (some este-in-comanda pluton ))   )
+(equivalent comandant-de-companie (and comandant (some este-in-comanda companie ) )    )
+(equivalent comandant-de-batalion (and comandant (some este-in-comanda batalion  ))    )
+(equivalent comandant-de-brigada (and comandant (some este-in-comanda brigada ))   )
+(equivalent comandant-de-divizie (and comandant (some este-in-comanda divizie ))  )
+
+
+(implies 
+ 	soldat
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 1) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				fruntas
+				caporal
+				sergent
+				sergent-major
+				plutonier
+				plutonier-major
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+
+(implies 
+ 	fruntas
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 2) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				caporal
+				sergent
+				sergent-major
+				plutonier
+				plutonier-major
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+
+(implies 
+ 	caporal
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 3) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				sergent
+				sergent-major
+				plutonier
+				plutonier-major
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+;(equivalent sergent (and soldat-gradat (= rang 4) (some este-inferior-lui sergent-major)))
+#|(implies 
+ 	sergent
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 4) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				sergent-major
+				plutonier
+				plutonier-major
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)|#
+
+(instance grupa1 grupa )
+(related grupa1 pluton1 este-subunitate-pentru  )
+(instance grupa2 grupa )
+(related grupa2 pluton1 este-subunitate-pentru  )
+(instance grupa3 grupa )
+(related grupa3 pluton2 este-subunitate-pentru  )
+(instance grupa4 grupa )
+(related grupa4 pluton2 este-subunitate-pentru  )
+(instance grupa5 grupa )
+(related grupa5 pluton3 este-subunitate-pentru  )
+(instance grupa6 grupa )
+(related grupa6 pluton3 este-subunitate-pentru  )
+(instance grupa7 grupa )
+(related grupa7 pluton4 este-subunitate-pentru  )
+(instance grupa8 grupa )
+(related grupa8 pluton4 este-subunitate-pentru  )
+(instance grupa9 grupa )
+(related grupa9 pluton5 este-subunitate-pentru  )
+(instance grupa10 grupa )
+(related grupa10 pluton5 este-subunitate-pentru  )
+(instance grupa11 grupa )
+(related grupa11 pluton6 este-subunitate-pentru  )
+(instance grupa12 grupa )
+(related grupa12 pluton6 este-subunitate-pentru  )
+(instance grupa13 grupa )
+(related grupa13 pluton7 este-subunitate-pentru  )
+(instance grupa14 grupa )
+(related grupa14 pluton7 este-subunitate-pentru  )
+(instance grupa15 grupa )
+(related grupa15 pluton8 este-subunitate-pentru  )
+(instance grupa16 grupa )
+(related grupa16 pluton8 este-subunitate-pentru  )
+
+(instance pluton1 pluton )
+(related pluton1 compania1 este-subunitate-pentru  )
+(instance pluton2 pluton )
+(related pluton2 compania2 este-subunitate-pentru  )
+(instance pluton3 pluton )
+(related pluton3 compania3 este-subunitate-pentru  )
+(instance pluton4 pluton )
+(related pluton4 compania4 este-subunitate-pentru  )
+(instance pluton5 pluton )
+(related pluton5 compania5 este-subunitate-pentru  )
+(instance pluton6 pluton )
+(related pluton6 compania6 este-subunitate-pentru  )
+(instance pluton7 pluton )
+(related pluton7 compania7 este-subunitate-pentru  )
+(instance pluton8 pluton )
+(related pluton8 compania8 este-subunitate-pentru  )
+
+(instance compania1 companie )
+(related compania1 batalionul1 este-subunitate-pentru  )
+(instance compania2 companie )
+(related compania2 batalionul1 este-subunitate-pentru  )
+(instance compania3 companie )
+(related compania3 batalionul2 este-subunitate-pentru  )
+(instance compania4 companie )
+(related compania4 batalionul2 este-subunitate-pentru  )
+(instance compania5 companie )
+(related compania5 batalionul3 este-subunitate-pentru  )
+(instance compania6 companie )
+(related compania6 batalionul3 este-subunitate-pentru  )
+(instance compania7 companie )
+(related compania7 batalionul4 este-subunitate-pentru  )
+(instance compania8 companie )
+(related compania8 batalionul4 este-subunitate-pentru  )
+
+
+(instance batalionul1 batalion )
+(related batalionul1 brigada1 este-subunitate-pentru  )
+(instance batalionul2 batalion )
+(related batalionul2 brigada1 este-subunitate-pentru  )
+(instance batalionul3 batalion )
+(related batalionul3 brigada2 este-subunitate-pentru  )
+(instance batalionul4 batalion )
+(related batalionul4 brigada2 este-subunitate-pentru  )
+
+(instance brigada1 brigada )
+(related brigada1 divizia1 este-subunitate-pentru  )
+(instance brigada2 brigada )
+(related brigada2 divizia1 este-subunitate-pentru  )
+
+(instance divizia1 divizie )
+
+(instance Tudorica persoana )
+(instance Tudorica general-de-armata )
+(instance Tudorica (= varsta 20))
+
+(instance Tatomir general-maior )
+(instance Tatomir (= varsta 40))
+(instance Tatomir (= in-rezerva 0))
+(related Tatomir divizia1 este-in-comanda )
+
+(instance Stoica colonel )
+(instance Stoica (= varsta 40))
+(instance Stoica (= in-rezerva 0))
+(related Stoica brigada1 este-in-comanda )
+
+(instance Pop locotenent )
+(instance Pop (= varsta 45))
+(instance Pop (= in-rezerva 0))
+(related Pop batalionul1 este-in-comanda )
+
+(instance Muresan maior )
+(instance Muresan (= varsta 43))
+(instance Muresan (= in-rezerva 0))
+(related Muresan compania1 este-in-comanda )
+
+(instance Kadar locotenent )
+(instance Kadar (= varsta 48))
+(instance Kadar (= in-rezerva 0))
+(related Kadar pluton1 este-in-comanda )
+
+(instance Peter sergent )
+(instance Peter (= varsta 22))
+(instance Peter (= in-rezerva 0))
+(related Kadar pluton1 este-in-comanda )
+
+(instance Mera caporal )
+(instance Mera (= varsta 22))
+(instance Mera (= in-rezerva 0))
+(related Mera grupa1 este-in-comanda )
+
+(instance Mitrea soldat )
+(instance Mitrea (= varsta 22))
+(instance Mitrea (= in-rezerva 0))
+(related Mitrea grupa1 este-in-structura )
+
+
+(concept-instances grupa)
+(concept-instances soldat-gradat)
+(concept-instances comandant-de-divizie)
+(tbox-coherent?)
+(tbox-cyclic?)
+(abox-consistent?)

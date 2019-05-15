@@ -1,0 +1,3 @@
+(full-reset)
+(implies (some este-in-comanda grupa) (or sergent sergent-major))
+(equivalent sergent (and soldat-gradat (= rang 4) (some este-inferior-lui sergent-major)))

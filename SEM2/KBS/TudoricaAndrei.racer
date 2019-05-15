@@ -1,0 +1,1119 @@
+(in-knowledge-base armyDB Army-database)
+
+(signature 
+	:atomic-concepts
+	(
+	;principii;
+	;subordonare;
+		;un grad inferior nu poate da ordine unui grad superior;
+		;o functie inferioara nu poate coordona o functie superioara;
+		;o structura inferioara nu poate coordona o structura superioara;
+	;coopeararea;
+		;coopeararea este posibila posibila intre doua structuri/grade/functii diferite;
+	;coordonarea este actiunea comuna a mai multor structuri difereta sub o comanda unica;
+	
+	
+	
+	
+		;structuri;
+			grupa ;sergent-major;
+			pluton ;locotenent;
+			companie  ;capitan maior;
+			batalion  ;maior colonel;
+			brigada ;colonel;
+			divizie ;general;
+			corp-de-armata ;general-locotenent;
+			armata ;general-de-armata;
+		;grade;
+			;soldati ;
+				soldat
+				fruntas
+				caporal	
+				sergent
+			;subofiter;
+				sergent-major
+				plutonier;/ maistru cat 1;
+				plutonier-major;/ maistru cat 2;
+				plutonier-adjutant;/ maistru cat 3;
+				plutonier-adjutant-principal; / maistru cat 4;
+			;ofiteri;
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+			;generali;
+				general-de-brigada;/contraamiral o stea;
+				general-maior;/amiral doua stele;
+				general-locotenent ;trei stele;
+				general-de-armata ;patru stele;
+		;functii;
+			comandant-de-grupa
+			comandant-de-pluton
+			comandant-de-companie 
+			comandant-de-batalion 
+			comandant-de-brigada
+			comandant-de-divizie
+		;organizare;
+		unitate
+		subunitate
+		soldat-gradat
+		unitati-militare
+		comandant
+		persoana
+	)
+	
+	:roles
+	(
+		( este-superior-lui 
+			:inverse este-inferior-lui 
+			:transitive t
+			:domain soldat-gradat
+			:range soldat-gradat
+		)
+		( este-subunitate-pentru
+			:transitive t
+			:domain unitati-militare
+			:range unitati-militare
+		)
+		( este-in-structura
+			:domain unitati-militare
+			:range unitati-militare
+		)
+		( este-in-comanda
+			:parent este-in-structura
+			:domain comandant
+			:range unitati-militare
+		)
+		( este-sub-comanda-lui
+			:inverse este-in-comanda
+			:domain unitati-militare
+			:range comandant
+		)
+		( a-primit-ordin-de-la
+			:inverse a-dat-ordin-lui
+			:domain soldat-gradat
+			:range comandant
+		)
+	)
+
+	:individuals 
+	(
+		Tudorica
+		Tatomir
+		Stoica
+		Pop
+		Muresan
+		Kadar
+		Peter
+		Mera
+		Mitrea
+		
+		grupa1 grupa2 grupa3 grupa4 grupa5 grupa6 grupa7 grupa8 grupa9 grupa10 grupa11 grupa12 grupa13 grupa14 grupa15 grupa16
+		pluton1 pluton2 pluton3 pluton4 pluton5 pluton6 pluton7 pluton8
+		compania1 compania2 compania3 compania4 compania5 compania6 compania7 compania8
+		batalionul1 batalionul2 batalionul3 batalionul4
+		brigada1 brigada2
+		divizia1
+	)
+
+	:features
+	(
+		
+	)
+	
+	:attributes 
+	(
+		(real varsta )
+		(cardinal rang )
+		(cardinal a-primit-ordin )
+		(cardinal in-rezerva )
+	)
+)
+;;; unitati militare;
+(equivalent
+	unitati-militare
+	(or
+		unitate
+		subunitate
+	)
+)
+
+(disjoint unitate subunitate )
+
+(equivalent
+	subunitate
+	(or
+		grupa
+		pluton
+		companie 
+	)
+)
+
+(equivalent
+	unitate
+	(or
+		batalion 
+		brigada
+		divizie
+		corp-de-armata
+		armata
+	)
+)
+(disjoint unitati-militare persoana )
+(equivalent 
+	persoana
+	(and
+		(>= varsta 0)
+		(<= varsta 100)
+	)
+)
+
+(implies soldat-gradat persoana )
+
+#|(implies soldat-gradat
+		(or 
+			soldat
+			fruntas
+			caporal	
+			sergent
+				;subofiter;
+			sergent-major
+			plutonier;/ maistru cat 1;
+			plutonier-major;/ maistru cat 2;
+			plutonier-adjutant;/ maistru cat 3;
+			plutonier-adjutant-principal; / maistru cat 4;
+				;ofiteri;
+			sublocotenten
+			locotenent
+			capitan
+			maior
+			locotenent-colonel
+			colonel
+				;generali;
+			general-de-brigada;/contraamiral o stea;
+			general-maior;/amiral doua stele;
+			general-locotenent ;trei stele;
+			general-de-armata ;patru stele;
+		)
+)|#
+
+
+;cine e/poate fi in comanda pentru fiecare din structuri;
+(implies comandant soldat-gradat )
+(implies (some este-in-comanda unitati-militare ) (= in-rezerva 0))
+(implies (some este-in-comanda grupa ) (or sergent sergent-major ))
+(implies (some este-in-comanda pluton ) (or locotenent capitan ))
+(implies (some este-in-comanda companie  ) maior )
+(implies (some este-in-comanda batalion  ) (or maior locotenent-colonel colonel ))
+(implies (some este-in-comanda brigada ) (or colonel general-de-brigada ))
+(implies (some este-in-comanda divizie ) general-maior )
+(implies (some este-in-comanda corp-de-armata ) general-locotenent )
+(implies (some este-in-comanda armata ) general-de-armata )
+
+(equivalent comandant-de-grupa (and comandant (some este-in-comanda grupa ))   )
+(equivalent comandant-de-pluton (and comandant (some este-in-comanda pluton ))   )
+(equivalent comandant-de-companie (and comandant (some este-in-comanda companie ) )    )
+(equivalent comandant-de-batalion (and comandant (some este-in-comanda batalion  ))    )
+(equivalent comandant-de-brigada (and comandant (some este-in-comanda brigada ))   )
+(equivalent comandant-de-divizie (and comandant (some este-in-comanda divizie ))  )
+
+(implies (some a-dat-ordin-lui (some este-in-structura grupa )) (or comandant-de-grupa comandant-de-pluton comandant-de-companie  comandant-de-batalion  comandant-de-brigada comandant-de-divizie ) )
+(implies (some a-dat-ordin-lui (some este-in-structura pluton )) (or comandant-de-pluton  comandant-de-companie  comandant-de-batalion  comandant-de-brigada comandant-de-divizie ) )
+(implies (some a-dat-ordin-lui (some este-in-structura companie )) (or comandant-de-companie  comandant-de-batalion  comandant-de-brigada comandant-de-divizie ) )
+(implies (some a-dat-ordin-lui (some este-in-structura batalion )) (or comandant-de-batalion  comandant-de-brigada comandant-de-divizie ) )
+(implies (some a-dat-ordin-lui (some este-in-structura brigada )) (or comandant-de-brigada comandant-de-divizie ))
+(implies (some a-dat-ordin-lui (some este-in-structura divizie )) comandant-de-divizie )
+
+
+
+(implies (some a-primit-ordin-de-la comandant ) (= a-primit-ordin 1))
+(implies soldat-gradat (at-most 1 a-primit-ordin-de-la ))
+
+(equivalent 
+ 	soldat
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 1) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				fruntas
+				caporal
+				sergent
+				sergent-major
+				plutonier
+				plutonier-major
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	fruntas
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 2) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				caporal
+				sergent
+				sergent-major
+				plutonier
+				plutonier-major
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	caporal
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 3) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				sergent
+				sergent-major
+				plutonier
+				plutonier-major
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	sergent
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 4) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				sergent-major
+				plutonier
+				plutonier-major
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	sergent-major
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 5) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				plutonier
+				plutonier-major
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	plutonier
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 6) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				plutonier-major
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	plutonier-major
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 7) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				plutonier-adjutant
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	plutonier-adjutant
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 8) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				plutonier-adjutant-principal
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	plutonier-adjutant-principal
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 9) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				sublocotenten
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	sublocotenten
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 10) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				locotenent
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	locotenent
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 11) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				capitan
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	capitan
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 12) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				maior
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	maior
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 13) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				locotenent-colonel
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	locotenent-colonel
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 14) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				colonel
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	colonel
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 15) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				general-de-brigada
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	general-de-brigada
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 16) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				general-maior
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	general-maior
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 17) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			(or
+				general-locotenent
+				general-de-armata
+			)
+		)
+	)
+)
+(equivalent 
+ 	general-locotenent
+ 	(and 
+ 	 	 soldat-gradat 
+ 	 	 (= rang 18) 
+ 	 	 (all 
+ 	 	 	 este-inferior-lui
+			general-de-armata
+		)
+	)
+)
+(equivalent 
+	general-de-armata 
+	(and 
+		soldat-gradat  
+		(= rang 19)
+	)
+)
+
+ (disjoint soldat fruntas )
+ (disjoint soldat caporal )
+ (disjoint soldat sergent )
+ (disjoint soldat sergent-major )
+ (disjoint soldat plutonier )
+ (disjoint soldat plutonier-major )
+ (disjoint soldat plutonier-adjutant )
+ (disjoint soldat plutonier-adjutant-principal )
+ (disjoint soldat sublocotenten )
+ (disjoint soldat locotenent )
+ (disjoint soldat capitan )
+ (disjoint soldat maior )
+ (disjoint soldat locotenent-colonel )
+ (disjoint soldat colonel )
+ (disjoint soldat general-de-brigada )
+ (disjoint soldat general-maior )
+ (disjoint soldat general-locotenent )
+ (disjoint soldat general-de-armata )
+
+ (disjoint fruntas soldat )
+ (disjoint fruntas caporal )
+ (disjoint fruntas sergent )
+ (disjoint fruntas sergent-major )
+ (disjoint fruntas plutonier )
+ (disjoint fruntas plutonier-major )
+ (disjoint fruntas plutonier-adjutant )
+ (disjoint fruntas plutonier-adjutant-principal )
+ (disjoint fruntas sublocotenten )
+ (disjoint fruntas locotenent )
+ (disjoint fruntas capitan )
+ (disjoint fruntas maior )
+ (disjoint fruntas locotenent-colonel )
+ (disjoint fruntas colonel )
+ (disjoint fruntas general-de-brigada )
+ (disjoint fruntas general-maior )
+ (disjoint fruntas general-locotenent )
+ (disjoint fruntas general-de-armata )
+
+ (disjoint caporal soldat )
+ (disjoint caporal fruntas )
+ (disjoint caporal sergent )
+ (disjoint caporal sergent-major )
+ (disjoint caporal plutonier )
+ (disjoint caporal plutonier-major )
+ (disjoint caporal plutonier-adjutant )
+ (disjoint caporal plutonier-adjutant-principal )
+ (disjoint caporal sublocotenten )
+ (disjoint caporal locotenent )
+ (disjoint caporal capitan )
+ (disjoint caporal maior )
+ (disjoint caporal locotenent-colonel )
+ (disjoint caporal colonel )
+ (disjoint caporal general-de-brigada )
+ (disjoint caporal general-maior )
+ (disjoint caporal general-locotenent )
+ (disjoint caporal general-de-armata )
+
+ (disjoint sergent soldat )
+ (disjoint sergent fruntas )
+ (disjoint sergent caporal )
+ (disjoint sergent sergent-major )
+ (disjoint sergent plutonier )
+ (disjoint sergent plutonier-major )
+ (disjoint sergent plutonier-adjutant )
+ (disjoint sergent plutonier-adjutant-principal )
+ (disjoint sergent sublocotenten )
+ (disjoint sergent locotenent )
+ (disjoint sergent capitan )
+ (disjoint sergent maior )
+ (disjoint sergent locotenent-colonel )
+ (disjoint sergent colonel )
+ (disjoint sergent general-de-brigada )
+ (disjoint sergent general-maior )
+ (disjoint sergent general-locotenent )
+ (disjoint sergent general-de-armata )
+
+ (disjoint sergent-major soldat )
+ (disjoint sergent-major fruntas )
+ (disjoint sergent-major caporal )
+ (disjoint sergent-major sergent )
+ (disjoint sergent-major plutonier )
+ (disjoint sergent-major plutonier-major )
+ (disjoint sergent-major plutonier-adjutant )
+ (disjoint sergent-major plutonier-adjutant-principal )
+ (disjoint sergent-major sublocotenten )
+ (disjoint sergent-major locotenent )
+ (disjoint sergent-major capitan )
+ (disjoint sergent-major maior )
+ (disjoint sergent-major locotenent-colonel )
+ (disjoint sergent-major colonel )
+ (disjoint sergent-major general-de-brigada )
+ (disjoint sergent-major general-maior )
+ (disjoint sergent-major general-locotenent )
+ (disjoint sergent-major general-de-armata )
+
+ (disjoint plutonier soldat )
+ (disjoint plutonier fruntas )
+ (disjoint plutonier caporal )
+ (disjoint plutonier sergent )
+ (disjoint plutonier sergent-major )
+ (disjoint plutonier plutonier-major )
+ (disjoint plutonier plutonier-adjutant )
+ (disjoint plutonier plutonier-adjutant-principal )
+ (disjoint plutonier sublocotenten )
+ (disjoint plutonier locotenent )
+ (disjoint plutonier capitan )
+ (disjoint plutonier maior )
+ (disjoint plutonier locotenent-colonel )
+ (disjoint plutonier colonel )
+ (disjoint plutonier general-de-brigada )
+ (disjoint plutonier general-maior )
+ (disjoint plutonier general-locotenent )
+ (disjoint plutonier general-de-armata )
+
+ (disjoint plutonier-major soldat )
+ (disjoint plutonier-major fruntas )
+ (disjoint plutonier-major caporal )
+ (disjoint plutonier-major sergent )
+ (disjoint plutonier-major sergent-major )
+ (disjoint plutonier-major plutonier )
+ (disjoint plutonier-major plutonier-adjutant )
+ (disjoint plutonier-major plutonier-adjutant-principal )
+ (disjoint plutonier-major sublocotenten )
+ (disjoint plutonier-major locotenent )
+ (disjoint plutonier-major capitan )
+ (disjoint plutonier-major maior )
+ (disjoint plutonier-major locotenent-colonel )
+ (disjoint plutonier-major colonel )
+ (disjoint plutonier-major general-de-brigada )
+ (disjoint plutonier-major general-maior )
+ (disjoint plutonier-major general-locotenent )
+ (disjoint plutonier-major general-de-armata )
+
+ (disjoint plutonier-adjutant soldat )
+ (disjoint plutonier-adjutant fruntas )
+ (disjoint plutonier-adjutant caporal )
+ (disjoint plutonier-adjutant sergent )
+ (disjoint plutonier-adjutant sergent-major )
+ (disjoint plutonier-adjutant plutonier )
+ (disjoint plutonier-adjutant plutonier-major )
+ (disjoint plutonier-adjutant plutonier-adjutant-principal )
+ (disjoint plutonier-adjutant sublocotenten )
+ (disjoint plutonier-adjutant locotenent )
+ (disjoint plutonier-adjutant capitan )
+ (disjoint plutonier-adjutant maior )
+ (disjoint plutonier-adjutant locotenent-colonel )
+ (disjoint plutonier-adjutant colonel )
+ (disjoint plutonier-adjutant general-de-brigada )
+ (disjoint plutonier-adjutant general-maior )
+ (disjoint plutonier-adjutant general-locotenent )
+ (disjoint plutonier-adjutant general-de-armata )
+
+ (disjoint plutonier-adjutant-principal soldat )
+ (disjoint plutonier-adjutant-principal fruntas )
+ (disjoint plutonier-adjutant-principal caporal )
+ (disjoint plutonier-adjutant-principal sergent )
+ (disjoint plutonier-adjutant-principal sergent-major )
+ (disjoint plutonier-adjutant-principal plutonier )
+ (disjoint plutonier-adjutant-principal plutonier-major )
+ (disjoint plutonier-adjutant-principal plutonier-adjutant )
+ (disjoint plutonier-adjutant-principal sublocotenten )
+ (disjoint plutonier-adjutant-principal locotenent )
+ (disjoint plutonier-adjutant-principal capitan )
+ (disjoint plutonier-adjutant-principal maior )
+ (disjoint plutonier-adjutant-principal locotenent-colonel )
+ (disjoint plutonier-adjutant-principal colonel )
+ (disjoint plutonier-adjutant-principal general-de-brigada )
+ (disjoint plutonier-adjutant-principal general-maior )
+ (disjoint plutonier-adjutant-principal general-locotenent )
+ (disjoint plutonier-adjutant-principal general-de-armata )
+
+ (disjoint sublocotenten soldat )
+ (disjoint sublocotenten fruntas )
+ (disjoint sublocotenten caporal )
+ (disjoint sublocotenten sergent )
+ (disjoint sublocotenten sergent-major )
+ (disjoint sublocotenten plutonier )
+ (disjoint sublocotenten plutonier-major )
+ (disjoint sublocotenten plutonier-adjutant )
+ (disjoint sublocotenten plutonier-adjutant-principal )
+ (disjoint sublocotenten locotenent )
+ (disjoint sublocotenten capitan )
+ (disjoint sublocotenten maior )
+ (disjoint sublocotenten locotenent-colonel )
+ (disjoint sublocotenten colonel )
+ (disjoint sublocotenten general-de-brigada )
+ (disjoint sublocotenten general-maior )
+ (disjoint sublocotenten general-locotenent )
+ (disjoint sublocotenten general-de-armata )
+
+ (disjoint locotenent soldat )
+ (disjoint locotenent fruntas )
+ (disjoint locotenent caporal )
+ (disjoint locotenent sergent )
+ (disjoint locotenent sergent-major )
+ (disjoint locotenent plutonier )
+ (disjoint locotenent plutonier-major )
+ (disjoint locotenent plutonier-adjutant )
+ (disjoint locotenent plutonier-adjutant-principal )
+ (disjoint locotenent sublocotenten )
+ (disjoint locotenent capitan )
+ (disjoint locotenent maior )
+ (disjoint locotenent locotenent-colonel )
+ (disjoint locotenent colonel )
+ (disjoint locotenent general-de-brigada )
+ (disjoint locotenent general-maior )
+ (disjoint locotenent general-locotenent )
+ (disjoint locotenent general-de-armata )
+
+ (disjoint capitan soldat )
+ (disjoint capitan fruntas )
+ (disjoint capitan caporal )
+ (disjoint capitan sergent )
+ (disjoint capitan sergent-major )
+ (disjoint capitan plutonier )
+ (disjoint capitan plutonier-major )
+ (disjoint capitan plutonier-adjutant )
+ (disjoint capitan plutonier-adjutant-principal )
+ (disjoint capitan sublocotenten )
+ (disjoint capitan locotenent )
+ (disjoint capitan maior )
+ (disjoint capitan locotenent-colonel )
+ (disjoint capitan colonel )
+ (disjoint capitan general-de-brigada )
+ (disjoint capitan general-maior )
+ (disjoint capitan general-locotenent )
+ (disjoint capitan general-de-armata )
+
+ (disjoint maior soldat )
+ (disjoint maior fruntas )
+ (disjoint maior caporal )
+ (disjoint maior sergent )
+ (disjoint maior sergent-major )
+ (disjoint maior plutonier )
+ (disjoint maior plutonier-major )
+ (disjoint maior plutonier-adjutant )
+ (disjoint maior plutonier-adjutant-principal )
+ (disjoint maior sublocotenten )
+ (disjoint maior locotenent )
+ (disjoint maior capitan )
+ (disjoint maior locotenent-colonel )
+ (disjoint maior colonel )
+ (disjoint maior general-de-brigada )
+ (disjoint maior general-maior )
+ (disjoint maior general-locotenent )
+ (disjoint maior general-de-armata )
+
+ (disjoint locotenent-colonel soldat )
+ (disjoint locotenent-colonel fruntas )
+ (disjoint locotenent-colonel caporal )
+ (disjoint locotenent-colonel sergent )
+ (disjoint locotenent-colonel sergent-major )
+ (disjoint locotenent-colonel plutonier )
+ (disjoint locotenent-colonel plutonier-major )
+ (disjoint locotenent-colonel plutonier-adjutant )
+ (disjoint locotenent-colonel plutonier-adjutant-principal )
+ (disjoint locotenent-colonel sublocotenten )
+ (disjoint locotenent-colonel locotenent )
+ (disjoint locotenent-colonel capitan )
+ (disjoint locotenent-colonel maior )
+ (disjoint locotenent-colonel colonel )
+ (disjoint locotenent-colonel general-de-brigada )
+ (disjoint locotenent-colonel general-maior )
+ (disjoint locotenent-colonel general-locotenent )
+ (disjoint locotenent-colonel general-de-armata )
+
+ (disjoint colonel soldat )
+ (disjoint colonel fruntas )
+ (disjoint colonel caporal )
+ (disjoint colonel sergent )
+ (disjoint colonel sergent-major )
+ (disjoint colonel plutonier )
+ (disjoint colonel plutonier-major )
+ (disjoint colonel plutonier-adjutant )
+ (disjoint colonel plutonier-adjutant-principal )
+ (disjoint colonel sublocotenten )
+ (disjoint colonel locotenent )
+ (disjoint colonel capitan )
+ (disjoint colonel maior )
+ (disjoint colonel locotenent-colonel )
+ (disjoint colonel general-de-brigada )
+ (disjoint colonel general-maior )
+ (disjoint colonel general-locotenent )
+ (disjoint colonel general-de-armata )
+
+ (disjoint general-de-brigada soldat )
+ (disjoint general-de-brigada fruntas )
+ (disjoint general-de-brigada caporal )
+ (disjoint general-de-brigada sergent )
+ (disjoint general-de-brigada sergent-major )
+ (disjoint general-de-brigada plutonier )
+ (disjoint general-de-brigada plutonier-major )
+ (disjoint general-de-brigada plutonier-adjutant )
+ (disjoint general-de-brigada plutonier-adjutant-principal )
+ (disjoint general-de-brigada sublocotenten )
+ (disjoint general-de-brigada locotenent )
+ (disjoint general-de-brigada capitan )
+ (disjoint general-de-brigada maior )
+ (disjoint general-de-brigada locotenent-colonel )
+ (disjoint general-de-brigada colonel )
+ (disjoint general-de-brigada general-maior )
+ (disjoint general-de-brigada general-locotenent )
+ (disjoint general-de-brigada general-de-armata )
+
+ (disjoint general-maior soldat )
+ (disjoint general-maior fruntas )
+ (disjoint general-maior caporal )
+ (disjoint general-maior sergent )
+ (disjoint general-maior sergent-major )
+ (disjoint general-maior plutonier )
+ (disjoint general-maior plutonier-major )
+ (disjoint general-maior plutonier-adjutant )
+ (disjoint general-maior plutonier-adjutant-principal )
+ (disjoint general-maior sublocotenten )
+ (disjoint general-maior locotenent )
+ (disjoint general-maior capitan )
+ (disjoint general-maior maior )
+ (disjoint general-maior locotenent-colonel )
+ (disjoint general-maior colonel )
+ (disjoint general-maior general-de-brigada )
+ (disjoint general-maior general-locotenent )
+ (disjoint general-maior general-de-armata )
+
+ (disjoint general-locotenent soldat )
+ (disjoint general-locotenent fruntas )
+ (disjoint general-locotenent caporal )
+ (disjoint general-locotenent sergent )
+ (disjoint general-locotenent sergent-major )
+ (disjoint general-locotenent plutonier )
+ (disjoint general-locotenent plutonier-major )
+ (disjoint general-locotenent plutonier-adjutant )
+ (disjoint general-locotenent plutonier-adjutant-principal )
+ (disjoint general-locotenent sublocotenten )
+ (disjoint general-locotenent locotenent )
+ (disjoint general-locotenent capitan )
+ (disjoint general-locotenent maior )
+ (disjoint general-locotenent locotenent-colonel )
+ (disjoint general-locotenent colonel )
+ (disjoint general-locotenent general-de-brigada )
+ (disjoint general-locotenent general-maior )
+ (disjoint general-locotenent general-de-armata )
+
+ (disjoint general-de-armata soldat )
+ (disjoint general-de-armata fruntas )
+ (disjoint general-de-armata caporal )
+ (disjoint general-de-armata sergent )
+ (disjoint general-de-armata sergent-major )
+ (disjoint general-de-armata plutonier )
+ (disjoint general-de-armata plutonier-major )
+ (disjoint general-de-armata plutonier-adjutant )
+ (disjoint general-de-armata plutonier-adjutant-principal )
+ (disjoint general-de-armata sublocotenten )
+ (disjoint general-de-armata locotenent )
+ (disjoint general-de-armata capitan )
+ (disjoint general-de-armata maior )
+ (disjoint general-de-armata locotenent-colonel )
+ (disjoint general-de-armata colonel )
+ (disjoint general-de-armata general-de-brigada )
+ (disjoint general-de-armata general-maior )
+ (disjoint general-de-armata general-locotenent )
+
+(instance grupa1 grupa )
+(related grupa1 pluton1 este-subunitate-pentru  )
+(instance grupa2 grupa )
+(related grupa2 pluton1 este-subunitate-pentru  )
+(instance grupa3 grupa )
+(related grupa3 pluton2 este-subunitate-pentru  )
+(instance grupa4 grupa )
+(related grupa4 pluton2 este-subunitate-pentru  )
+(instance grupa5 grupa )
+(related grupa5 pluton3 este-subunitate-pentru  )
+(instance grupa6 grupa )
+(related grupa6 pluton3 este-subunitate-pentru  )
+(instance grupa7 grupa )
+(related grupa7 pluton4 este-subunitate-pentru  )
+(instance grupa8 grupa )
+(related grupa8 pluton4 este-subunitate-pentru  )
+(instance grupa9 grupa )
+(related grupa9 pluton5 este-subunitate-pentru  )
+(instance grupa10 grupa )
+(related grupa10 pluton5 este-subunitate-pentru  )
+(instance grupa11 grupa )
+(related grupa11 pluton6 este-subunitate-pentru  )
+(instance grupa12 grupa )
+(related grupa12 pluton6 este-subunitate-pentru  )
+(instance grupa13 grupa )
+(related grupa13 pluton7 este-subunitate-pentru  )
+(instance grupa14 grupa )
+(related grupa14 pluton7 este-subunitate-pentru  )
+(instance grupa15 grupa )
+(related grupa15 pluton8 este-subunitate-pentru  )
+(instance grupa16 grupa )
+(related grupa16 pluton8 este-subunitate-pentru  )
+
+(instance pluton1 pluton )
+(related pluton1 compania1 este-subunitate-pentru  )
+(instance pluton2 pluton )
+(related pluton2 compania2 este-subunitate-pentru  )
+(instance pluton3 pluton )
+(related pluton3 compania3 este-subunitate-pentru  )
+(instance pluton4 pluton )
+(related pluton4 compania4 este-subunitate-pentru  )
+(instance pluton5 pluton )
+(related pluton5 compania5 este-subunitate-pentru  )
+(instance pluton6 pluton )
+(related pluton6 compania6 este-subunitate-pentru  )
+(instance pluton7 pluton )
+(related pluton7 compania7 este-subunitate-pentru  )
+(instance pluton8 pluton )
+(related pluton8 compania8 este-subunitate-pentru  )
+
+(instance compania1 companie )
+(related compania1 batalionul1 este-subunitate-pentru  )
+(instance compania2 companie )
+(related compania2 batalionul1 este-subunitate-pentru  )
+(instance compania3 companie )
+(related compania3 batalionul2 este-subunitate-pentru  )
+(instance compania4 companie )
+(related compania4 batalionul2 este-subunitate-pentru  )
+(instance compania5 companie )
+(related compania5 batalionul3 este-subunitate-pentru  )
+(instance compania6 companie )
+(related compania6 batalionul3 este-subunitate-pentru  )
+(instance compania7 companie )
+(related compania7 batalionul4 este-subunitate-pentru  )
+(instance compania8 companie )
+(related compania8 batalionul4 este-subunitate-pentru  )
+
+
+(instance batalionul1 batalion )
+(related batalionul1 brigada1 este-subunitate-pentru  )
+(instance batalionul2 batalion )
+(related batalionul2 brigada1 este-subunitate-pentru  )
+(instance batalionul3 batalion )
+(related batalionul3 brigada2 este-subunitate-pentru  )
+(instance batalionul4 batalion )
+(related batalionul4 brigada2 este-subunitate-pentru  )
+
+(instance brigada1 brigada )
+(related brigada1 divizia1 este-subunitate-pentru  )
+(instance brigada2 brigada )
+(related brigada2 divizia1 este-subunitate-pentru  )
+
+(instance divizia1 divizie )
+
+(instance Tudorica persoana )
+(instance Tudorica general-de-armata )
+(instance Tudorica (= varsta 20))
+
+(instance Tatomir general-maior )
+(instance Tatomir (= varsta 40))
+(instance Tatomir (= in-rezerva 0))
+(related Tatomir divizia1 este-in-comanda )
+
+(instance Stoica colonel )
+(instance Stoica (= varsta 40))
+(instance Stoica (= in-rezerva 0))
+(related Stoica brigada1 este-in-comanda )
+
+(instance Pop locotenent )
+(instance Pop (= varsta 45))
+(instance Pop (= in-rezerva 0))
+(related Pop batalionul1 este-in-comanda )
+
+(instance Muresan maior )
+(instance Muresan (= varsta 43))
+(instance Muresan (= in-rezerva 0))
+(related Muresan compania1 este-in-comanda )
+
+(instance Kadar locotenent )
+(instance Kadar (= varsta 48))
+(instance Kadar (= in-rezerva 0))
+(related Kadar pluton1 este-in-comanda )
+
+(instance Peter sergent )
+(instance Peter (= varsta 22))
+(instance Peter (= in-rezerva 0))
+(related Kadar pluton1 este-in-comanda )
+
+(instance Mera caporal )
+(instance Mera (= varsta 22))
+(instance Mera (= in-rezerva 0))
+(related Mera grupa1 este-in-comanda )
+
+(instance Mitrea fruntas )
+(instance Mitrea (= varsta 22))
+(instance Mitrea (= in-rezerva 0))
+(related Mitrea grupa1 este-in-structura )
+
+
+(concept-instances cadet)
+(tbox-coherent?)
+(abox-consistent?)

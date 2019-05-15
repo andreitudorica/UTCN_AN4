@@ -1,0 +1,6 @@
+(full-reset)
+(equivalent (some este-in-comanda grupa) (or sergent sergent-major))
+(equivalent sergent (some este-inferior-lui sergent-major))
+(tbox-coherent?)
+(tbox-cyclic?)
+(abox-consistent?)
