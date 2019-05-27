@@ -262,8 +262,6 @@
 
 (concept-instances grupa)
 (concept-instances sergent)
-;(individual-instance? Sirbu (este-in-comanda grupa1))
-
 (retrieve (?x) (?x grupa1 este-in-comanda))
 (retrieve (?x) (?x grupa2 este-in-comanda))
 (retrieve (?x) (?x grupa3 este-in-comanda))
