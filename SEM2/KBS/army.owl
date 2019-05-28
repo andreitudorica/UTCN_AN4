@@ -1,0 +1,1313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:owl2="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+   xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+   <owl:Ontology rdf:about=""/>
+   <owl:DatatypeProperty rdf:about="IN-REZERVA">
+      <rdfs:range resource="http://www.w3.org/2001/XMLSchema#float"/>
+   </owl:DatatypeProperty>
+   <owl:ObjectProperty rdf:about="ESTE-IN-COMANDA">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:intersectionOf rdf:parseType="Collection">
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="ARMATA"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="GENERAL-DE-ARMATA"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="CORP-DE-ARMATA"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="GENERAL-LOCOTENENT"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="DIVIZIE"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="GENERAL-MAIOR"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="BRIGADA"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="GENERAL-DE-BRIGADA"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="BRIGADA"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="COLONEL"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="BATALION"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="COLONEL"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="BATALION"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="LOCOTENENT-COLONEL"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="BATALION"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="MAIOR"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="COMPANIE"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="MAIOR"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="PLUTON"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="CAPITAN"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="PLUTON"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="LOCOTENENT"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="GRUPA"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="SERGENT-MAJOR"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="GRUPA"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                           <owl:Class rdf:about="SERGENT"/>
+                        </owl:unionOf>
+                     </owl:Class>
+                     <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="IN-REZERVA"/>
+                              <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+                           </owl:Restriction>
+                           <owl:Restriction>
+                              <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                              <owl:allValuesFrom>
+                                 <owl:Class>
+                                    <owl:complementOf>
+                                       <owl:Class rdf:about="UNITATI-MILITARE"/>
+                                    </owl:complementOf>
+                                 </owl:Class>
+                              </owl:allValuesFrom>
+                           </owl:Restriction>
+                        </owl:unionOf>
+                     </owl:Class>
+                  </owl:intersectionOf>
+               </owl:Class>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+   </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="ESTE-INFERIOR-LUI">
+      <owl:inverseOf rdf:resource="ESTE-SUPERIOR-LUI"/>
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="SOLDAT-GRADAT"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="SOLDAT-GRADAT"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:TransitiveProperty rdf:about="ESTE-INFERIOR-LUI"/>
+   <owl:ObjectProperty rdf:about="ESTE-SUPERIOR-LUI">
+      <rdfs:domain>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="SOLDAT-GRADAT"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:domain>
+      <rdfs:range>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="SOLDAT-GRADAT"/>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:range>
+   </owl:ObjectProperty>
+   <owl:TransitiveProperty rdf:about="ESTE-SUPERIOR-LUI"/>
+   <owl:ObjectProperty rdf:about="ESTE-SUBUNITATE-PENTRU">
+   </owl:ObjectProperty>
+   <owl:ObjectProperty rdf:about="ESTE-IN-STRUCTURA">
+   </owl:ObjectProperty>
+   <owl:DatatypeProperty rdf:about="VARSTA">
+      <rdfs:range resource="http://www.w3.org/2001/XMLSchema#float"/>
+   </owl:DatatypeProperty>
+   <owl:Class rdf:about="PERSOANA">
+      <owl:disjointWith>
+         <owl:Class rdf:about="UNITATI-MILITARE"/>
+      </owl:disjointWith>
+   </owl:Class>
+   <owl:Class rdf:about="SUBUNITATE">
+      <owl:disjointWith>
+         <owl:Class rdf:about="UNITATE"/>
+      </owl:disjointWith>
+   </owl:Class>
+   <owl:Class rdf:about="UNITATI-MILITARE">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="UNITATE"/>
+               <owl:Class rdf:about="SUBUNITATE"/>
+            </owl:unionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="SUBUNITATE">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="GRUPA"/>
+               <owl:Class rdf:about="PLUTON"/>
+               <owl:Class rdf:about="COMPANIE"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="UNITATE">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="BATALION"/>
+               <owl:Class rdf:about="BRIGADA"/>
+               <owl:Class rdf:about="DIVIZIE"/>
+               <owl:Class rdf:about="CORP-DE-ARMATA"/>
+               <owl:Class rdf:about="ARMATA"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="PERSOANA">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="VARSTA"/>
+                  <owl:someValuesFrom>
+                     <xsd:simpleType>
+                        <xsd:restriction xsd:base="http://www.w3.org/2001/XMLSchema#float">
+                           <xsd:minInclusive xsd:value="0"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="VARSTA"/>
+                  <owl:someValuesFrom>
+                     <xsd:simpleType>
+                        <xsd:restriction xsd:base="http://www.w3.org/2001/XMLSchema#float">
+                           <xsd:maxInclusive xsd:value="100"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="SOLDAT-GRADAT">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="PERSOANA"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="COMANDANT">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="PERSOANA"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="SOLDAT">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="FRUNTAS">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="CAPORAL">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="SERGENT">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="SERGENT-MAJOR">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="PLUTONIER">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="PLUTONIER-MAJOR">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="PLUTONIER-ADJUTANT">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="PLUTONIER-ADJUTANT-PRINCIPAL">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="SUBLOCOTENTEN">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="LOCOTENENT">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="CAPITAN">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="MAIOR">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="LOCOTENENT-COLONEL">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="COLONEL">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="GENERAL-DE-BRIGADA">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="GENERAL-MAIOR">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="GENERAL-LOCOTENENT">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="GENERAL-DE-ARMATA">
+      <rdfs:subClassOf>
+         <owl:Class rdf:about="SOLDAT-GRADAT"/>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="UNITATI-MILITARE"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="IN-REZERVA"/>
+                  <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+               </owl:Restriction>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="GRUPA"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="SERGENT"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="GRUPA"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="SERGENT-MAJOR"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="PLUTON"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="LOCOTENENT"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="PLUTON"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="CAPITAN"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="COMPANIE"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="MAIOR"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="BATALION"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="MAIOR"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="BATALION"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="LOCOTENENT-COLONEL"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="BATALION"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="COLONEL"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="BRIGADA"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="COLONEL"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="BRIGADA"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="GENERAL-DE-BRIGADA"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="DIVIZIE"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="GENERAL-MAIOR"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="CORP-DE-ARMATA"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="GENERAL-LOCOTENENT"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                        <owl:someValuesFrom>
+                           <owl:Class rdf:about="ARMATA"/>
+                        </owl:someValuesFrom>
+                     </owl:Restriction>
+                  </owl:complementOf>
+               </owl:Class>
+               <owl:Class rdf:about="GENERAL-DE-ARMATA"/>
+            </owl:unionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="COMANDANT-DE-GRUPA">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COMANDANT"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                  <owl:someValuesFrom>
+                     <owl:Class rdf:about="GRUPA"/>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="COMANDANT-DE-PLUTON">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COMANDANT"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                  <owl:someValuesFrom>
+                     <owl:Class rdf:about="PLUTON"/>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="COMANDANT-DE-COMPANIE">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COMANDANT"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                  <owl:someValuesFrom>
+                     <owl:Class rdf:about="COMPANIE"/>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="COMANDANT-DE-BATALION">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COMANDANT"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                  <owl:someValuesFrom>
+                     <owl:Class rdf:about="BATALION"/>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="COMANDANT-DE-BRIGADA">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COMANDANT"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                  <owl:someValuesFrom>
+                     <owl:Class rdf:about="BRIGADA"/>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="COMANDANT-DE-DIVIZIE">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COMANDANT"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                  <owl:someValuesFrom>
+                     <owl:Class rdf:about="DIVIZIE"/>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="COMANDANT-DE-CORP-DE-ARMATA">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COMANDANT"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                  <owl:someValuesFrom>
+                     <owl:Class rdf:about="CORP-DE-ARMATA"/>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="COMANDANT-DE-ARMATA">
+      <owl:equivalentClass>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class rdf:about="COMANDANT"/>
+               <owl:Restriction>
+                  <owl:onProperty rdf:resource="ESTE-IN-COMANDA"/>
+                  <owl:someValuesFrom>
+                     <owl:Class rdf:about="ARMATA"/>
+                  </owl:someValuesFrom>
+               </owl:Restriction>
+            </owl:intersectionOf>
+         </owl:Class>
+      </owl:equivalentClass>
+   </owl:Class>
+   <owl:Class rdf:about="FRUNTAS">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="SOLDAT"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="CAPORAL">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="FRUNTAS"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="SERGENT">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="CAPORAL"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="SERGENT-MAJOR">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="SERGENT"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="PLUTONIER">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="SERGENT-MAJOR"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="PLUTONIER-MAJOR">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="PLUTONIER"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="PLUTONIER-ADJUTANT">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="PLUTONIER-MAJOR"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="PLUTONIER-ADJUTANT-PRINCIPAL">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="PLUTONIER-ADJUTANT"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="SUBLOCOTENTEN">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="PLUTONIER-ADJUTANT-PRINCIPAL"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="LOCOTENENT">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="SUBLOCOTENTEN"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="CAPITAN">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="LOCOTENENT"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="MAIOR">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="CAPITAN"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="LOCOTENENT-COLONEL">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="MAIOR"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="COLONEL">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="LOCOTENENT-COLONEL"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="GENERAL-DE-BRIGATA">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="COLONEL"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="GENERAL-MAIOR">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="GENERAL-DE-BRIGATA"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="GENERAL-LOCOTENENT">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="GENERAL-MAIOR"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="GENERAL-DE-ARMATA">
+      <rdfs:subClassOf>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="ESTE-INFERIOR-LUI"/>
+            <owl:someValuesFrom>
+               <owl:Class rdf:about="GENERAL-LOCOTENENT"/>
+            </owl:someValuesFrom>
+         </owl:Restriction>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="PERSOANA">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Class rdf:about="UNITATI-MILITARE"/>
+                  </owl:complementOf>
+               </owl:Class>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <owl:Class rdf:about="SUBUNITATE">
+      <rdfs:subClassOf>
+         <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+               <owl:Class>
+                  <owl:complementOf>
+                     <owl:Class rdf:about="UNITATE"/>
+                  </owl:complementOf>
+               </owl:Class>
+            </owl:intersectionOf>
+         </owl:Class>
+      </rdfs:subClassOf>
+   </owl:Class>
+   <SOLDAT rdf:about="MITREA">
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="IN-REZERVA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="VARSTA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">22</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <ESTE-IN-STRUCTURA rdf:resource="GRUPA1"/>
+   </SOLDAT>
+   <GRUPA rdf:about="GRUPA1">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON1"/>
+   </GRUPA>
+   <CAPORAL rdf:about="MERA">
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="IN-REZERVA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="VARSTA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">22</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <ESTE-IN-COMANDA rdf:resource="GRUPA2"/>
+   </CAPORAL>
+   <GRUPA rdf:about="GRUPA2">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON1"/>
+   </GRUPA>
+   <SERGENT rdf:about="PETER">
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="IN-REZERVA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="VARSTA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">22</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <ESTE-IN-COMANDA rdf:resource="GRUPA3"/>
+   </SERGENT>
+   <GRUPA rdf:about="GRUPA3">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON2"/>
+   </GRUPA>
+   <SERGENT-MAJOR rdf:about="SIRBU">
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="IN-REZERVA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="VARSTA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">22</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <ESTE-IN-COMANDA rdf:resource="GRUPA1"/>
+   </SERGENT-MAJOR>
+   <LOCOTENENT rdf:about="KADAR">
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="IN-REZERVA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="VARSTA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">48</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <ESTE-IN-COMANDA rdf:resource="PLUTON1"/>
+   </LOCOTENENT>
+   <PLUTON rdf:about="PLUTON1">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="COMPANIA1"/>
+   </PLUTON>
+   <MAIOR rdf:about="MURESAN">
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="IN-REZERVA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="VARSTA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">43</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <ESTE-IN-COMANDA rdf:resource="COMPANIA1"/>
+   </MAIOR>
+   <COMPANIE rdf:about="COMPANIA1">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BATALIONUL1"/>
+   </COMPANIE>
+   <LOCOTENENT rdf:about="POP">
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="IN-REZERVA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="VARSTA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <ESTE-IN-COMANDA rdf:resource="BATALIONUL1"/>
+   </LOCOTENENT>
+   <BATALION rdf:about="BATALIONUL1">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BRIGADA1"/>
+   </BATALION>
+   <COLONEL rdf:about="STOICA">
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="IN-REZERVA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="VARSTA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <ESTE-IN-COMANDA rdf:resource="BRIGADA1"/>
+   </COLONEL>
+   <BRIGADA rdf:about="BRIGADA1">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="DIVIZIA1"/>
+   </BRIGADA>
+   <GENERAL-MAIOR rdf:about="TATOMIR">
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="IN-REZERVA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="VARSTA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <ESTE-IN-COMANDA rdf:resource="DIVIZIA1"/>
+   </GENERAL-MAIOR>
+   <DIVIZIE rdf:about="DIVIZIA1">
+   </DIVIZIE>
+   <BRIGADA rdf:about="BRIGADA2">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="DIVIZIA1"/>
+   </BRIGADA>
+   <BATALION rdf:about="BATALIONUL4">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BRIGADA2"/>
+   </BATALION>
+   <BATALION rdf:about="BATALIONUL3">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BRIGADA2"/>
+   </BATALION>
+   <BATALION rdf:about="BATALIONUL2">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BRIGADA1"/>
+   </BATALION>
+   <COMPANIE rdf:about="COMPANIA8">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BATALIONUL4"/>
+   </COMPANIE>
+   <COMPANIE rdf:about="COMPANIA7">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BATALIONUL4"/>
+   </COMPANIE>
+   <COMPANIE rdf:about="COMPANIA6">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BATALIONUL3"/>
+   </COMPANIE>
+   <COMPANIE rdf:about="COMPANIA5">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BATALIONUL3"/>
+   </COMPANIE>
+   <COMPANIE rdf:about="COMPANIA4">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BATALIONUL2"/>
+   </COMPANIE>
+   <COMPANIE rdf:about="COMPANIA3">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BATALIONUL2"/>
+   </COMPANIE>
+   <COMPANIE rdf:about="COMPANIA2">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="BATALIONUL1"/>
+   </COMPANIE>
+   <PLUTON rdf:about="PLUTON8">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="COMPANIA8"/>
+   </PLUTON>
+   <PLUTON rdf:about="PLUTON7">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="COMPANIA7"/>
+   </PLUTON>
+   <PLUTON rdf:about="PLUTON6">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="COMPANIA6"/>
+   </PLUTON>
+   <PLUTON rdf:about="PLUTON5">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="COMPANIA5"/>
+   </PLUTON>
+   <PLUTON rdf:about="PLUTON4">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="COMPANIA4"/>
+   </PLUTON>
+   <PLUTON rdf:about="PLUTON3">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="COMPANIA3"/>
+   </PLUTON>
+   <PLUTON rdf:about="PLUTON2">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="COMPANIA2"/>
+   </PLUTON>
+   <GRUPA rdf:about="GRUPA16">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON8"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA15">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON8"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA14">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON7"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA13">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON7"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA12">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON6"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA11">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON6"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA10">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON5"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA9">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON5"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA8">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON4"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA7">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON4"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA6">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON3"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA5">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON3"/>
+   </GRUPA>
+   <GRUPA rdf:about="GRUPA4">
+      <ESTE-SUBUNITATE-PENTRU rdf:resource="PLUTON2"/>
+   </GRUPA>
+   <GENERAL-DE-ARMATA rdf:about="TUDORICA">
+      <rdf:type>
+         <owl:Restriction>
+            <owl:onProperty rdf:resource="VARSTA"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20</owl:hasValue>
+         </owl:Restriction>
+      </rdf:type>
+      <rdf:type rdf:resource="PERSOANA"/>
+   </GENERAL-DE-ARMATA>
+</rdf:RDF>
